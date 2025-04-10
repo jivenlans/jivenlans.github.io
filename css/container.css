@@ -1,0 +1,82 @@
+html, body {
+    height: 100%;
+    /*background-image: url("../../images/background_main.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;*/
+}
+
+.body-content {
+    padding-left: 0;
+    padding-right: 0;
+    height: 100%;
+    /*padding-top: 54px;*/
+}
+
+h1, h2, h3, h4, font-face, a {
+    font-family: sans-serif !important;
+}
+
+.normalFont {
+    color: #050032 !important;
+}
+
+.footerFont {
+    color: white;
+    font-size: 12px;;
+}
+
+.footer {
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+    position: fixed;
+    bottom: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.whiteFont {
+    color: white !important;
+}
+
+.buttonDiv {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+
+.rightButtonDiv {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: right;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#pageContainer {
+    padding-top: 77px;
+}
+
+.divBlueBackground {
+    background-color: #050032;
+    border-color: #050032;
+}
+
+.innerMainContainer {
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.profileContainer {
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}

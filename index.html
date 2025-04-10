@@ -1,7 +1,411 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Jivenlans Tabien</title>
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/container.css">
+ 
+    <style>
+        .servicesCell {
+            height: 300px;
+        }
+
+        .servicesCell:hover img {
+            transform: scale(1.5);
+        }
+
+        .topSellingProductCell {
+            cursor: pointer;
+        }
+
+        .topSellingProductCell {
+            height: 300px;
+            width: 100%;
+            border: 1px solid transparent;
+            background-color: white;
+            border-radius: 10px;
+            -webkit-box-shadow: 0 0 5px 2px gray;
+            -moz-box-shadow: 0 0 5px 2px gray;
+            box-shadow: 0 0 5px 2px gray;
+        }
+
+        .topSellingProductCell .serviceCellImage {
+            width: 100%;
+            transition: 0.5s all ease-in-out;
+        }
+
+        .topSellingProductCell:hover .serviceCellImage {
+            transform: scale(1.1);
+            z-index: -9999;
+        }
+
+        .servicesCellInnerContainer {
+            height: 90%;
+            width: 90%;
+            border: 1px solid transparent;
+            background-color: #ffeec2;
+            border-radius: 10px;
+            padding-top: 20px;
+            cursor: pointer;
+        }
+
+        .servicesCellInnerContainer:hover .serviceCellImage {
+            transform: scale(1.1);
+            z-index: -9999;
+        }
+
+        .servicesCellInnerContainer .serviceCellImage {
+            width: 100%;
+            transition: 0.5s all ease-in-out;
+        }
+
+        .footer {
+            position: relative;
+            bottom: 0;
+        }
+
+        input, select, textarea {
+            max-width: 100%;
+        }
+
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages. test</p>
+    <script>
+        window.rootUrl = "/";
+    </script>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black mainNavBar sticky">
+        <div class="container-fluid">
+            <strong class="navbar-brand" href="#" style="font-size: 20px;">Jivenlans Tabien</strong>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- This will align items to the right -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Experiences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="pageContainer" class="container-fluid body-content">
+
+        <div class=".container-fluid contentContainers" id="firstContentContainer">
+
+            <section class="profileContainer" style="background-color: whitesmoke;">
+                <br />    
+                <div class="container" style="width: 100%; max-width: 100%;">
+                    <div class='row' style='width:102%; border: 1px solid transparent;'>
+                        <div class="col-lg-6" style="border: 1px solid transparent; display: flex; align-items: center; ">
+                            <p class="mbr-text mbr-fonts-style mb-12 display-12 col-lg-12" style="font-size: 20px;">
+                                <strong>Software Developer</strong> with over 9 years in designing and delivering scalable applications like 
+                                <strong>Web</strong>, <strong>APIs</strong>, and <strong>background services</strong>. 
+                                Proficient in </strong>.NET Core</strong>, </strong>Blazor</strong> and </strong>Javascript</strong>
+                                 with expertise in building performant, user-friendly solutions. Skilled in leading teams, mentoring developers, and ensuring seamless integration of systems
+
+                                <br/> <br/>
+
+                                I’ve worked on various projects throughout my career, including systems used by 
+                                <strong>hospitals</strong>, <strong>banks</strong>, and one of the largest <strong>alcohol producers</strong> in the Philippines.
+
+                                <br/> <br/>
+
+                                <strong>Skills:</strong> <br/>
+                                <span class="badge bg-secondary">HTML</span>
+                                <span class="badge bg-secondary">CSS</span>
+                                <span class="badge bg-secondary">Bootstrap</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                                <span class="badge bg-secondary">C# (.Net Framework/.Net Core)</span>
+                                <span class="badge bg-secondary">SQL</span>
+                                <span class="badge bg-secondary">ASP.NET MVC</span>
+                                <span class="badge bg-secondary">ASP.NET Webforms</span>
+                                <span class="badge bg-secondary">Web APIs (RESTful and SOAP)</span>
+                                <span class="badge bg-secondary">Blazor</span>
+                                <span class="badge bg-secondary">JQuery</span>
+                                <span class="badge bg-secondary">SignalR</span>
+                                <span class="badge bg-secondary">Windows Services</span>
+                                <span class="badge bg-secondary">Console Applications</span>
+                                <span class="badge bg-secondary">FTP/SFTP</span>
+                                <span class="badge bg-secondary">SQLite</span>
+                                <span class="badge bg-secondary">Entity Framework Core</span>
+                                <span class="badge bg-secondary">Visual Studio</span>
+                                <span class="badge bg-secondary">NATS</span>
+                                <span class="badge bg-secondary">Git</span>
+                                <span class="badge bg-secondary">TFS</span>
+                                <span class="badge bg-secondary">Jenkins</span>
+                                <span class="badge bg-secondary">Fortify</span>
+                                <span class="badge bg-secondary">Postman</span>
+                                <span class="badge bg-secondary">SOAPUI</span>
+                                <span class="badge bg-secondary">Mockoon</span>
+                                <span class="badge bg-secondary">SSRS</span>
+                                <span class="badge bg-secondary">Docker</span>
+
+                            </p>
+                        </div>
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-5" style="border: 1px solid transparent; display: flex; align-items: center; ">
+                            <img src="images/profile_picture.jpg" style="width: 80%; height: 110%; border-radius: 10px;" />
+                        </div>        
+                    </div>
+                </div>
+        
+                <br />
+                <br />
+            </section>  
+        
+            <section id="Projects" class="innerMainContainer divBlueBackground">
+                <br />
+                <center><h2 class="whiteFont" style="font-family: fantasy; font-weight: 1000;">Personal Projects</h2></center>       
+                <div class="container" style="width: 100%; max-width: 100%;">
+                    <div class='row' style='width:102%;'>
+
+                        <div class="col-lg-4" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
+                            <div class="topSellingProductCell">
+    
+                                <div class="serviceCellImage" style="border: 1px solid transparent; width: 100%; height: 90%; background-image: url('images/product_1.png'); background-repeat: no-repeat; background-size: 90% 90%; background-position: center;">
+    
+                                </div>
+                                <div style="width: 100%; border: 1px solid transparent; display: flex; align-items: center; justify-content: center; ">
+                                    <center><b class="normalFont" style="font-size: 15px; font-family: sans-serif;">Printing Shop Services (Web Application)</b></center>
+                                </div>
+    
+                            </div>
+                        </div>
+                        <div class="col-lg-4" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
+                            <div class="topSellingProductCell">
+    
+                                <div class="serviceCellImage" style="border: 1px solid transparent; width: 100%; height: 90%; background-image: url('images/product_2.png'); background-repeat: no-repeat; background-size: 90% 90%; background-position: center;">
+    
+                                </div>
+                                <div style="width: 100%; border: 1px solid transparent; display: flex; align-items: center; justify-content: center; ">
+                                    <center><b class="normalFont" style="font-size: 15px; font-family: sans-serif;">NATS Utilities - queuing management (Class Library)</b></center>
+                                </div>
+    
+                            </div>
+                        </div>
+                        <div class="col-lg-4" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
+                            <div class="topSellingProductCell">
+    
+                                <div class="serviceCellImage" style="border: 1px solid transparent; width: 100%; height: 90%; background-image: url('images/product_3.png'); background-repeat: no-repeat; background-size: 90% 90%; background-position: center;">
+    
+                                </div>
+                                <div style="width: 100%; border: 1px solid transparent; display: flex; align-items: center; justify-content: center; ">
+                                    <center><b class="normalFont" style="font-size: 15px; font-family: sans-serif;">Login functionality in Blazor using ASP.Net Identity</b></center>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+                <br />
+                <br />
+            </section>
+        
+            <section id="Experiences" class="innerMainContainer" style="background-color: whitesmoke;">
+                <br /> 
+
+                <center><h2 style="font-family: fantasy; font-weight: 1000;"> Professional Experiences </h2></center>
+
+                <div class="container" style="width: 100%; max-width: 100%;">
+                    <div class='row' style='width:102%;'>
+
+                        <div class="container my-5">
+                            
+                            <div class="list-group">
+                              
+                              <!-- Experience 1 -->
+                              <div class="list-group-item mb-4">
+                                <h5 class="mb-1">IDEMIA Philippines Inc.</h5>
+                                <h6 class="mb-2 text-muted">Senior Software Developer</h6>
+                                <p class="text-muted mb-0">September 2021 - Present</p>
+                                <h6 class="text-muted">Responsibilities:</h6>
+                                <ul class="mb-0">
+                                    <li>Developed Web, SOAP & REST APIs, Windows services and Console apps</li>
+                                    <li>Developed Blazor Server application with SSO Integration</li>
+                                    <li>Designed and implemented applications from ground-up</li>
+                                    <li>Spearheaded the migration of legacy systems to .NET Core</li>
+                                    <li>Maintained legacy sytems</li>
+                                    <li>Collaborated with cross-functional teams to deliver projects within Agile frameworks</li>
+                                    <li>Integration with other application and third-party application</li>
+                                    <li>Conducted demo/presentation of implemented projects to Product Owner</li>
+                                    <li>Conducted Product support</li>
+                                    <li>Conducted code reviews</li>
+                                    <li>Mentored other devs</li>
+                                </ul>
+                              </div>
+                          
+                              <!-- Experience 2 -->
+                              <div class="list-group-item mb-4">
+                                <h5 class="mb-1">SMITS Inc. - IT company of San Miguel Corporation</h5>
+                                <h6 class="mb-2 text-muted">.NET Developer</h6>
+                                <p class="text-muted mb-0">September 2018 - August 2021</p>
+                                <h6 class="text-muted">Responsibilities:</h6>
+                                <ul class="mb-0">
+                                    <li>Developed Web, SOAP & REST APIs, Windows services and Console apps</li>
+                                    <li>Integration with SAP</li>
+                                    <li>Designed and implemented applications from ground-up</li>
+                                    <li>Maintained legacy sytems</li>
+                                    <li>Collaborated with cross-functional teams to deliver projects within Agile frameworks</li>
+                                    <li>Conducted demo/presentation of implemented projects to clients</li>
+                                    <li>Conducted Product support</li>
+                                    <li>Conducted code reviews</li>
+                                    <li>Mentored other devs</li>
+                                </ul>
+                              </div>
+                          
+                              <!-- Experience 3 -->
+                              <div class="list-group-item mb-4">
+                                <h5 class="mb-1">Service 101 Plus Consulting Inc.</h5>
+                                <h6 class="mb-2 text-muted">Enterprise Systems Specialist</h6>
+                                <p class="text-muted mb-0">March 2016 - July 2018</p>
+                                <h6 class="text-muted">Responsibilities:</h6>
+                                <ul class="mb-0">
+                                    <li>Developed Web, REST APIs and Mobile application</li>
+                                    <li>Integration with SAP</li>
+                                    <li>Conducted Product support</li>
+                                    <li>Conducted demo/presentation of implemented projects to clients</li>
+                                </ul>
+                              </div>
+
+                              <div class="list-group-item mb-4">
+                                <h5 class="mb-1">Infoman Inc.</h5>
+                                <h6 class="mb-2 text-muted">Web Developer (Intern)</h6>
+                                <p class="text-muted mb-0">June 2015 - September 2015</p>
+                                <h6 class="text-muted">Responsibilities:</h6>
+                                <ul class="mb-0">
+                                    <li>Web Application Development</li>
+                                </ul>
+                              </div>
+                              
+                            </div>
+                          </div>
+
+                    </div>
+                </div>
+        
+                <br />
+                <br />
+            </section>
+
+            <section id="Education" class="innerMainContainer divBlueBackground">
+                <br /> 
+
+                <center><h2 class="whiteFont" style="font-family: fantasy; font-weight: 1000;">Education</h2></center>
+
+                <div class="container" style="width: 100%; max-width: 100%;">
+                    <div class='row' style='width:102%;'>
+                        <div class="container my-5">
+                            <div class="list-group">
+                              
+                              <!-- Education Entry for One School -->
+                              <div class="list-group-item mb-4">
+                                <h5 class="mb-1">Adamson University</h5> <!-- School Name -->
+                                <h6 class="mb-2 text-muted">Bachelor of Science in Information Technology</h6> <!-- Degree -->
+                                <p class="text-muted mb-2">June 2012 - March 2016</p> <!-- Graduation Date -->                            
+                              </div>
+                          
+                            </div>
+                          </div>
+                    </div>
+                </div>
+        
+                <br />
+                <br />
+            </section>
+
+            <section id="Contact" class="innerMainContainer" style="background-color: whitesmoke;">
+                <br /> 
+
+                <center><h2 style="font-family: fantasy; font-weight: 1000;"> Contact </h2></center>
+
+                <div class="container" style="width: 100%; max-width: 100%;">
+                    <div class='row' style='width:102%;'>
+                        <div class=".container-fluid contentContainers" id="firstContentContainer" style="height: 100%;">
+                            <section class="innerMainContainer">
+                        
+                                <br />
+                                <br />
+                        
+                                <div class="container" style="width: 100%; max-width: 100%; height: 100%;">
+                        
+                                    <form id="quotationForm" class="needs-validation" novalidate>
+                        
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="name" placeholder="Enter your name (required)" required>
+                                            <div class="invalid-feedback">
+                                                Name is required.
+                                            </div>
+                                        </div>
+                                        <br />                   
+                        
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="subject" placeholder="Enter subject (optional)">
+                                        </div>
+                                        <br />
+                        
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="message" rows="10" placeholder="Enter your message (required)" required></textarea>
+                                            <div class="invalid-feedback">
+                                                Message is required.
+                                            </div>
+                                        </div>
+                                        <br />
+                        
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary divBlueBackground">Submit</button>
+                                        </div>
+                        
+                                    </form>
+                        
+                                </div>
+                        
+                            </section>                 
+                        
+                        </div>
+                    </div>
+                </div>
+        
+                <br />
+                <br />
+            </section>
+        
+            <section class="footer divBlueBackground">
+                <div class="container" style="width: 100%; max-width: 100%;">
+                    <div class='row' style='width:102%;'>
+            
+                        <div class="col-lg-12">
+                            <center>
+                                <font class="footerFont">© Copyright 2025. Made by Jivenlans Tabien v1.0.0.0</font> <br />
+                            </center>
+                        </div>   
+                    </div>
+                </div>
+            </section>
+        </div>        
+    </div>
+    
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

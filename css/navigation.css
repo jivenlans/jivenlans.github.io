@@ -1,0 +1,16 @@
+.container-fluid {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.mainNavBar {
+    background-color: #050032 !important;
+    border-bottom: none;
+    z-index: 100;
+    padding-top: 20px;
+    padding-bottom: 20px;;
+}
+
+.nav-item > a {
+    font-size: 14px;
+}

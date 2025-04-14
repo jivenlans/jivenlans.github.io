@@ -77,12 +77,122 @@
             max-width: 100%;
         }
 
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Ensures modal is on top */
+        }
+
+        .modal-content {
+            background: #fff;
+            display: flex;
+            flex-direction: row;
+            width: 95%;
+            max-width: 1400px;
+            max-height: 95vh;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 22px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* Left side for description */
+        .modal-left {
+            width: 30%;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        /* Right side for images */
+        .modal-right {
+            width: 70%;
+            padding: 20px;
+            border-left: 1px solid #ccc;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Image styles */
+        .modal-right-content img {
+            width: 100%;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        .modal-right-content 
+        {
+            width: 100%;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 3px;
+        }
+
+        .modal-close 
+        {
+            top: -14px;
+            right: -9px;
+        }
+
+        /* Button styling */
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Show modal when active */
+        .modal-overlay.active {
+            display: flex; /* Make modal visible */
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                flex-direction: column;
+            }
+            .modal-left,
+            .modal-right-content {
+                width: 100%;
+                border-left: none;
+            }
+            .modal-right
+            {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="82" tabindex="0">
     <script>
         window.rootUrl = "/";
     </script>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content"></div>
+    </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-black mainNavBar sticky">
         <div class="container-fluid">
@@ -190,38 +300,38 @@
                 <div class="container" style="width: 100%; max-width: 100%;">
                     <div class='row' style='width:102%;'>
 
-                        <div class="col-lg-4" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
+                        <div class="col-lg-4" onclick="openProjectModal(this)" modal="modal" projectName="printingShopServices" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
                             <div class="topSellingProductCell">
     
                                 <div class="serviceCellImage" style="border: 1px solid transparent; width: 100%; height: 90%; background-image: url('images/product_1.png'); background-repeat: no-repeat; background-size: 90% 90%; background-position: center;">
     
                                 </div>
                                 <div style="width: 100%; border: 1px solid transparent; display: flex; align-items: center; justify-content: center; ">
-                                    <center><b class="normalFont" style="font-size: 15px; font-family: sans-serif;">Printing Shop Services (Web Application)</b></center>
+                                    <center><b class="normalFont" style="font-size: 15px; font-family: sans-serif;">Digital Printing Business Website</b></center>
                                 </div>
     
                             </div>
                         </div>
-                        <div class="col-lg-4" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
+                        <div class="col-lg-4" onclick="openProjectModal(this)" modal="modal" projectName="natsUtilities" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
                             <div class="topSellingProductCell">
     
                                 <div class="serviceCellImage" style="border: 1px solid transparent; width: 100%; height: 90%; background-image: url('images/product_2.png'); background-repeat: no-repeat; background-size: 90% 90%; background-position: center;">
     
                                 </div>
                                 <div style="width: 100%; border: 1px solid transparent; display: flex; align-items: center; justify-content: center; ">
-                                    <center><b class="normalFont" style="font-size: 15px; font-family: sans-serif;">NATS Utilities - queuing management (Class Library)</b></center>
+                                    <center><b class="normalFont" style="font-size: 15px; font-family: sans-serif;">NATS Queue Management Utilities</b></center>
                                 </div>
     
                             </div>
                         </div>
-                        <div class="col-lg-4" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
+                        <div class="col-lg-4" onclick="openProjectModal(this)" modal="modal" projectName="loginBlazor" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
                             <div class="topSellingProductCell">
     
                                 <div class="serviceCellImage" style="border: 1px solid transparent; width: 100%; height: 90%; background-image: url('images/product_3.png'); background-repeat: no-repeat; background-size: 90% 90%; background-position: center;">
     
                                 </div>
                                 <div style="width: 100%; border: 1px solid transparent; display: flex; align-items: center; justify-content: center; ">
-                                    <center><b class="normalFont" style="font-size: 15px; font-family: sans-serif;">Login functionality in Blazor using ASP.Net Identity</b></center>
+                                    <center><b class="normalFont" style="font-size: 15px; font-family: sans-serif;">User Authentication in Blazor Using ASP.NET Identity</b></center>
                                 </div>
     
                             </div>
@@ -381,7 +491,7 @@
                 
                                 <div class="form-group">
                                     <button type="button" style="float: right;" class="btn btn-primary divBlueBackground" 
-                                    onclick="alert('This part is not working yet. This will be implemented in version 1.1.0.0. \n\nFor the meantime, you can send an email to tjivenlans@gmail.com. \n\n Sorry for the inconvenience.')">Submit</button>
+                                    onclick="alert('Feature coming soon in version 1.1.0.0.\n\nFor now, you can reach out at tjivenlans@gmail.com.\n\nThanks for your patience!')">Submit</button>
                                 </div>
                 
                             </form>
@@ -400,7 +510,7 @@
             
                         <div class="col-lg-12">
                             <center>
-                                <font class="footerFont">© Copyright 2025. Made by Jivenlans Tabien v1.0.2.0</font> <br />
+                                <font class="footerFont">© Copyright 2025. Made by Jivenlans Tabien v1.0.3.0</font> <br />
                             </center>
                         </div>   
                     </div>
@@ -408,6 +518,153 @@
             </section>
         </div>        
     </div>
+
+    <script>
+
+        //EVENT LISTENERS
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('modal');
+
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        //FUNCTIONS
+        function openProjectModal(elm)
+        {
+            const modal = document.getElementById(elm.getAttribute('modal'));
+
+            document.querySelector('#' + elm.getAttribute('modal') + ' .modal-content').innerHTML = generateProjectContent(elm.getAttribute('projectName'));
+
+            modal.classList.add('active');
+        }
+
+        function closeModal(modal)
+        {
+            const modalElement = document.getElementById(modal);
+
+            modalElement.classList.remove('active');
+        }
+
+        function generateProjectContent(projectName)
+        {
+            let html = '';
+
+            if (projectName == 'printingShopServices')
+            {
+                html = `
+                        <div class="modal-left"> 
+                            <p style="font-size: 22px;"><strong>Digital Printing Business Website</strong></p>
+                            <p>
+                                <strong>Project Description</strong>
+                                <ul style="list-style: none;">
+                                    <li>This is a website I’ve been working on for my family’s business during my free time—something I’m really proud of.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Capabilities:</strong><br/>
+                                <ul>
+                                    <li>Clients are able to view what printing services we can offer</li>
+                                    <li>Clients are able to view other details about our printing services such as location, prices, fb pages</li>
+                                    <li>Clients are able to message/email us to get quotation thru this website</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Technologies Used:</strong><br/><br/>
+                                <span class="badge bg-secondary">HTML</span>
+                                <span class="badge bg-secondary">CSS</span>
+                                <span class="badge bg-secondary">Bootstrap</span>
+                                <span class="badge bg-secondary">JavaScript</span> 
+                                <span class="badge bg-secondary">JQuery</span>
+                                <span class="badge bg-secondary">SQL</span>
+                                <span class="badge bg-secondary">.Net Framework/C#</span>
+                            </p>
+                        </div>
+
+                        <div class="modal-right">
+                            <button class="modal-close closeModalBtn" onclick="closeModal('modal')">&times;</button>
+                            <div class="modal-right-content">
+                                <img src="images/printingShopServices/printingShopServices_1.jpg" alt="Image 1" /> <br/><br/>
+                                <img src="images/printingShopServices/printingShopServices_2.jpg" alt="Image 2" /> <br/><br/>
+                                <img src="images/printingShopServices/printingShopServices_3.jpg" alt="Image 3" /> <br/><br/>
+                                <img src="images/printingShopServices/printingShopServices_4.jpg" alt="Image 4" /> <br/><br/>
+                                <img src="images/printingShopServices/printingShopServices_5.jpg" alt="Image 5" /> <br/><br/>
+                            </div>
+                        </div>`;
+            }
+            else if (projectName == 'natsUtilities')
+            {
+                html = `<div class="modal-left"> 
+                            <p style="font-size: 22px;"><strong>NATS Queue Management Utilities</strong></p>
+                            <p>
+                                <strong>Project Description</strong>
+                                <ul style="list-style: none;">
+                                    <li>Effortlessly add NATS-based messaging to your .NET applications with this easy-to-integrate class library — perfect for scalable, event-driven architectures.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Capabilities:</strong><br/>
+                                <ul>
+                                    <li>Message Publishing – Seamlessly push messages to the NATS queue.</li>
+                                    <li>Message Subscription – Fetch and process messages from the NATS queue in real time.</li>
+                                    <li>JetStream Persistence (Coming Soon) – Future support for message durability and stream persistence via NATS JetStream.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Technologies Used:</strong><br/><br/>
+                                <span class="badge bg-secondary">.NET Core/C#</span>
+                                <span class="badge bg-secondary">NATS</span>
+                            </p>
+                        </div>
+
+                        <div class="modal-right">
+                            <button class="modal-close closeModalBtn" onclick="closeModal('modal')">&times;</button>
+                            <div class="modal-right-content">
+                                <img src="images/natsUtilities/natsUtilities_1.png" alt="Image 1" /> <br/><br/>    
+                            </div>         
+                        </div>`;
+            }
+            else if (projectName == 'loginBlazor')
+            {
+                html = `<div class="modal-left"> 
+                            <p style="font-size: 22px;"><strong>User Authentication in Blazor Using ASP.NET Identity</strong></p>
+                            <p>
+                                <strong>Project Description</strong>
+                                <ul style="list-style: none;">
+                                    <li>Learn how to implement user authentication in Blazor using ASP.NET Identity. This guide will walk you through setting up login, ensuring that your Blazor app is both secure and easy to maintain.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Capabilities:</strong><br/>
+                                <ul>
+                                    <li>Login Functionality</li>
+                                    <li>Logout Functionality</li>
+                                    <li>Allows the user to set the landing page</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Technologies Used:</strong><br/><br/>
+                                <span class="badge bg-secondary">Blazor</span>
+                                <span class="badge bg-secondary">.NET Core/C#</span>
+                                <span class="badge bg-secondary">ASP.NET Identity</span>
+                                <span class="badge bg-secondary">Entity Framework Core</span> 
+                                <span class="badge bg-secondary">SQL Server</span>
+                            </p>
+                        </div>
+
+                        <div class="modal-right">
+                            <button class="modal-close closeModalBtn" onclick="closeModal('modal')">&times;</button>
+                            <div class="modal-right-content">
+                                <img src="images/loginBlazor/loginBlazor_1.png" alt="Image 1" /> <br/><br/>
+                            </div>
+                        </div>`;
+            }
+
+            return html;
+        }
+
+    </script>
     
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 

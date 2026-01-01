@@ -1,19 +1,131 @@
-/* Set padding to keep content from hitting the edges */
+/* Global typography and layout */
+:root{
+    --primary:#050032;
+    --muted:#6b7280;
+    --bg:#f6f8fb;
+    --accent:#0b3a8a;
+}
+
+html,body{
+    height:100%;
+    background-color:var(--bg);
+    font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    color: #0b1330;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+/* Hero / About */
+.hero{
+    background: linear-gradient(180deg, rgba(5,0,50,0.04) 0%, rgba(255,255,255,0) 100%);
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    border-radius: 8px;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.hero .mbr-text{
+    font-size: 1.05rem;
+}
+
+.profile-image{
+    width: 100%;
+    max-width: 340px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(20,30,60,0.08);
+}
+
+/* Cards / projects */
+.topSellingProductCell{
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.topSellingProductCell:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(11,19,48,0.12);
+}
+
+.serviceCellImage{ background-size: contain !important; background-position:center !important; }
+
+/* Improve badges look */
+.badge.bg-secondary{
+    background: #eef2ff;
+    color: var(--primary);
+    margin-right: 6px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+/* Forms */
+input, select, textarea {
+    max-width: 100%;
+}
+
+/* Footer */
+.footer {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+/* Modal tweaks (keep existing behavior) */
+.modal-content{ border-radius:10px; }
+
+@media (max-width: 991px){
+    .hero{ padding-top:2rem; padding-bottom:2rem; }
+    .profile-image{ max-width:260px; }
+}
+
+/* Utility */
+.text-muted{ color: var(--muted) !important; }
+
+/* Skills layout */
+.skills-grid { margin-top: 0.5rem; }
+.skill-category { background: #ffffff; padding: 12px; border-radius: 8px; box-shadow: 0 6px 18px rgba(11,19,48,0.04); height:100%; }
+.skill-title { margin: 0 0 6px 0; font-weight: 600; color: var(--primary); }
+.skill-category p { margin:0; color:#283044; line-height:1.45; font-size:0.95rem; }
+
+@media (max-width:576px){
+    .skill-category{ padding:10px; }
+    .skill-title{ font-size:0.95rem; }
+}
+
+/* Stacked cards layout (visual from provided design) */
+.image-wrap{ position: relative; display: inline-block; vertical-align: middle; }
+.visual-column{ position: relative; }
+/* Skills stack flows under the description and image by default */
+.skills-stack{ position: static; display:flex; gap: 24px; flex-wrap:nowrap; width:100%; margin-top: 14px; justify-content:space-between; align-items:flex-start; }
+.skills-col{ display:flex; flex-direction:column; gap:14px; flex:1 1 0; min-width:200px; }
+.skill-card{ width:100%; background: #ffffff; padding: 12px 14px; border-radius: 12px; box-shadow: 0 12px 30px rgba(20,30,60,0.10); }
+.skill-card h6{ margin:0 0 6px 0; font-size: 0.95rem; color: var(--primary); font-weight:700; }
+.skill-card p{ margin:0; font-size:0.86rem; color:#34425a; line-height:1.35; }
+
+.skill-list{ margin:0; padding-left:18px; }
+.skill-list li{ margin:6px 0; font-size:0.86rem; color:#34425a; line-height:1.35; }
+
+/* Add slight vertical staggering for a playful stacked look */
+.skills-col:nth-child(1) .skill-card{ transform: translateY(0); }
+.skills-col:nth-child(2) .skill-card{ transform: translateY(12px); }
+.skills-col:nth-child(3) .skill-card{ transform: translateY(24px); }
+
+
+@media (max-width: 1400px){
+    .visual-column .skills-stack{ left: 58%; transform: translate(-8%, -50%); max-width:52vw; }
+    .skill-card{ width:180px; }
+}
+
+@media (max-width: 1100px){
+    .visual-column .skills-stack{ left: 52%; transform: translate(-4%, -45%); }
+}
+
+@media (max-width: 992px){
+    .skills-stack{ position: static; display: grid; grid-template-columns: repeat(2,1fr); gap:12px; margin-top: 1rem; }
+    .skill-card{ width:100%; }
+}
+
+@media (max-width: 576px){
+    .skills-stack{ grid-template-columns: 1fr; }
 }

@@ -1,16 +1,29 @@
 .container-fluid {
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 6%;
+    padding-right: 6%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .mainNavBar {
-    background-color: #050032 !important;
+    background-color: #08103a !important;
     border-bottom: none;
-    z-index: 100;
-    padding-top: 20px;
-    padding-bottom: 20px;;
+    z-index: 1000;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
 }
 
 .nav-item > a {
-    font-size: 14px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.95);
+}
+
+.nav-item > a:hover, .nav-item > a:focus {
+    color: #ffdd57 !important;
+}
+
+@media (max-width:768px){
+    .container-fluid{ padding-left: 3%; padding-right:3%; }
+    .mainNavBar{ padding-top:0.4rem; padding-bottom:0.4rem; }
 }

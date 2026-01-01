@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Jivenlans Tabien</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="css/site.css">
@@ -192,6 +193,35 @@
             }
         }
 
+        /* Education section styling */
+        .education-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #ffffff10;
+            padding: 18px;
+            border-radius: 10px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+
+        .education-logo {
+            flex: 0 0 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .education-logo svg {
+            width: 110px;
+            height: 110px;
+        }
+
+        .education-card {
+            flex: 1 1 auto;
+        }
+
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="82" tabindex="0">
@@ -236,69 +266,139 @@
 
         <div class=".container-fluid contentContainers" id="firstContentContainer">
 
-            <section id="About" class="innerMainContainer profileContainer" style="background-color: whitesmoke;">
+            <section id="About" class="innerMainContainer profileContainer hero">
                 <br />    
-                <div class="container" style="width: 100%; max-width: 100%;">
+                    <div class="container" style="width: 100%; max-width: 100%;">
                     <div class='row' style='width:102%; border: 1px solid transparent;'>
                         <div class="col-lg-6" style="border: 1px solid transparent; display: flex; align-items: center; padding-bottom: 27px;">
                             <p class="mbr-text mbr-fonts-style mb-12 display-12 col-lg-12" style="font-size: 20px;">
 
-                                <strong style="font-size: 30px;">Hi! I'm Jivenlans Tabien</strong> <br/> <br/>
+                                <strong style="font-size: 30px;">Hi! I'm Jivenlans Tabien</strong>
 
-                                I am a <strong>Software Developer</strong> with over 9 years in designing and delivering scalable applications like 
-                                <strong>Web</strong>, <strong>APIs</strong>, and <strong>background services</strong>. 
-                                Proficient in </strong>.NET Core</strong>, </strong>Blazor</strong> and </strong>Javascript</strong>
-                                 with expertise in building performant, user-friendly solutions. Skilled in leading teams, mentoring developers, and ensuring seamless integration of systems
+                                <br/><br/>
 
-                                <br/> <br/>
+                                I am a <strong>Software Developer</strong> with over 9 years of experience designing and delivering scalable, production-ready applications — including <strong>web applications</strong>, <strong>APIs</strong> (SOAP &amp; REST), and <strong>background services</strong>. I specialize in building performant, maintainable systems using <strong>.NET Core</strong>, <strong>Blazor</strong>, and <strong>JavaScript</strong>, and I focus on delivering user-friendly solutions that integrate reliably across services.
 
-                                I’ve worked on various projects throughout my career, including systems used by 
-                                <strong>hospitals</strong>, <strong>banks</strong>, and one of the largest <strong>alcohol producers</strong> in the Philippines.
+                                <br/><br/>
+
+                                I’ve worked on projects for organizations in healthcare, finance, retail and manufacturing — including <strong>hospitals</strong>, <strong>banks</strong>, an <strong>eyecare &amp; eyeglasses company</strong>, and one of the largest <strong>alcohol producers</strong> in the Philippines.
 
                                 <br/> <br/>
 
-                                <strong>Skills:</strong> <br/>
-                                <span class="badge bg-secondary">HTML</span>
-                                <span class="badge bg-secondary">CSS</span>
-                                <span class="badge bg-secondary">Bootstrap</span>
-                                <span class="badge bg-secondary">JavaScript</span>
-                                <span class="badge bg-secondary">C# (.Net Framework/.Net Core)</span>
-                                <span class="badge bg-secondary">SQL</span>
-                                <span class="badge bg-secondary">ASP.NET MVC</span>
-                                <span class="badge bg-secondary">ASP.NET Webforms</span>
-                                <span class="badge bg-secondary">Web APIs (RESTful and SOAP)</span>
-                                <span class="badge bg-secondary">Blazor</span>
-                                <span class="badge bg-secondary">JQuery</span>
-                                <span class="badge bg-secondary">SignalR</span>
-                                <span class="badge bg-secondary">Windows Services</span>
-                                <span class="badge bg-secondary">Console Applications</span>
-                                <span class="badge bg-secondary">FTP/SFTP</span>
-                                <span class="badge bg-secondary">SQLite</span>
-                                <span class="badge bg-secondary">Entity Framework Core</span>
-                                <span class="badge bg-secondary">Visual Studio</span>
-                                <span class="badge bg-secondary">NATS</span>
-                                <span class="badge bg-secondary">Git</span>
-                                <span class="badge bg-secondary">TFS</span>
-                                <span class="badge bg-secondary">Jenkins</span>
-                                <span class="badge bg-secondary">Fortify</span>
-                                <span class="badge bg-secondary">Postman</span>
-                                <span class="badge bg-secondary">SOAPUI</span>
-                                <span class="badge bg-secondary">Mockoon</span>
-                                <span class="badge bg-secondary">SSRS</span>
-                                <span class="badge bg-secondary">Docker</span>
-
+                                </p>
                             </p>
 
                             <br/>
                             <br/>
                         </div>
-                        <div class="col-lg-1"></div>
-                        <div class="col-lg-5" style="border: 1px solid transparent; display: flex; align-items: center; ">
-                            <img src="images/profile_picture.jpg" style="width: 80%; height: 110%; border-radius: 10px;" />
-                        </div>        
+                        <div class="col-lg-6 visual-column" style="border: 1px solid transparent; display: flex; align-items: center; ">
+                            <div class="image-wrap">
+                                <img src="images/profile_picture.jpg" class="profile-image" alt="Profile picture" />
+                            </div>
+                        </div>
                     </div>
                 </div>
-        
+
+                <!-- <p><strong>Skills:</strong></p> -->
+                <!-- Skills cards: placed below description and image -->
+                <div class="container" style="width:100%; max-width:100%;">
+                    <div class="row" style="width:102%;">
+                        <div class="col-12">
+                            <div class="skills-stack">
+                                <div class="skills-col">
+                                    <div class="skill-card">
+                                        <h6>Application Types</h6>
+                                        <ul class="skill-list">
+                                            <li>Web</li>
+                                            <li>Web APIs/Services (SOAP &amp; REST)</li>
+                                            <li>Background Services / Console Applications</li>
+                                        </ul>
+                                    </div>
+                                    <div class="skill-card">
+                                        <h6>Databases &amp; Data Access</h6>
+                                        <ul class="skill-list">
+                                            <li>SQL Server</li>
+                                            <li>SQLite</li>
+                                            <li>PostgreSQL</li>
+                                            <li>MySQL</li>
+                                            <li>Entity Framework Core</li>
+                                            <li>ADO.NET</li>
+                                        </ul>
+                                    </div>
+                                    <div class="skill-card">
+                                        <h6>Reporting</h6>
+                                        <ul class="skill-list">
+                                            <li>SSRS</li>
+                                            <li>ClosedXML</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="skills-col">
+                                    <div class="skill-card">
+                                        <h6>Languages</h6>
+                                        <ul class="skill-list">
+                                            <li>C# (.NET Framework, .NET Core)</li>
+                                            <li>JavaScript</li>
+                                            <li>SQL</li>
+                                            <li>HTML / CSS</li>
+                                        </ul>
+                                    </div>
+                                    <div class="skill-card">
+                                        <h6>Logging</h6>
+                                        <ul class="skill-list">
+                                            <li>Serilog</li>
+                                            <li>Datadog</li>
+                                            <li>Log4net</li>
+                                        </ul>
+                                    </div>
+                                    <div class="skill-card">
+                                        <h6>File Transfer</h6>
+                                        <ul class="skill-list">
+                                            <li>SFTP</li>
+                                            <li>FTP</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="skills-col">
+                                    <div class="skill-card">
+                                        <h6>Web Frameworks &amp; Technologies</h6>
+                                        <ul class="skill-list">
+                                            <li>ASP.NET Core API</li>
+                                            <li>ASP.NET MVC</li>
+                                            <li>ASP.NET Webforms</li>
+                                            <li>Blazor</li>
+                                            <li>Swagger</li>
+                                            <li>AJAX, SignalR, jQuery, Bootstrap</li>
+                                        </ul>
+                                    </div>
+                                    <div class="skill-card">
+                                        <h6>Async Messaging &amp; Background Jobs</h6>
+                                        <ul class="skill-list">
+                                            <li>NATS</li>
+                                            <li>Kafka</li>
+                                            <li>Azure Queues</li>
+                                            <li>Hangfire</li>
+                                            <li>SQL Jobs</li>
+                                        </ul>
+                                    </div>
+                                    <div class="skill-card">
+                                        <h6>Dev &amp; API Testing Tools</h6>
+                                        <ul class="skill-list">
+                                            <li>Visual Studio</li>
+                                            <li>Visual Studio Code</li>
+                                            <li>Mockoon</li>
+                                            <li>Postman</li>
+                                            <li>SOAPUI</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <br />
                 <br />
             </section>  
@@ -309,7 +409,7 @@
                 <div class="container" style="width: 100%; max-width: 100%;">
                     <div class='row' style='width:102%;'>
 
-                        <div class="col-lg-4" onclick="openProjectModal(this)" modal="modal" projectName="printingShopServices" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
+                        <div class="col-lg-6" onclick="openProjectModal(this)" modal="modal" projectName="printingShopServices" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
                             <div class="topSellingProductCell">
     
                                 <div class="serviceCellImage" style="border: 1px solid transparent; width: 100%; height: 90%; background-image: url('images/product_1.png'); background-repeat: no-repeat; background-size: 90% 90%; background-position: center;">
@@ -321,7 +421,7 @@
     
                             </div>
                         </div>
-                        <div class="col-lg-4" onclick="openProjectModal(this)" modal="modal" projectName="natsUtilities" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
+                        <div class="col-lg-6" onclick="openProjectModal(this)" modal="modal" projectName="natsUtilities" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
                             <div class="topSellingProductCell">
     
                                 <div class="serviceCellImage" style="border: 1px solid transparent; width: 100%; height: 90%; background-image: url('images/product_2.png'); background-repeat: no-repeat; background-size: 90% 90%; background-position: center;">
@@ -333,7 +433,7 @@
     
                             </div>
                         </div>
-                        <div class="col-lg-4" onclick="openProjectModal(this)" modal="modal" projectName="loginBlazor" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
+                        <div class="col-lg-6" onclick="openProjectModal(this)" modal="modal" projectName="loginBlazor" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
                             <div class="topSellingProductCell">
     
                                 <div class="serviceCellImage" style="border: 1px solid transparent; width: 100%; height: 90%; background-image: url('images/product_3.png'); background-repeat: no-repeat; background-size: 90% 90%; background-position: center;">
@@ -341,6 +441,19 @@
                                 </div>
                                 <div style="width: 100%; border: 1px solid transparent; display: flex; align-items: center; justify-content: center; ">
                                     <center><b class="normalFont" style="font-size: 15px; font-family: sans-serif;">User Authentication in Blazor Using ASP.NET Identity</b></center>
+                                </div>
+    
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6" onclick="openProjectModal(this)" modal="modal" projectName="photoboothIntegration" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
+                            <div class="topSellingProductCell">
+    
+                                <div class="serviceCellImage" style="border: 1px solid transparent; width: 100%; height: 90%; background-image: url('images/product_4.png'); background-repeat: no-repeat; background-size: 90% 90%; background-position: center;">
+    
+                                </div>
+                                <div style="width: 100%; border: 1px solid transparent; display: flex; align-items: center; justify-content: center; ">
+                                    <center><b class="normalFont" style="font-size: 15px; font-family: sans-serif;">Photobooth Integration with DSLRBooth Software</b></center>
                                 </div>
     
                             </div>
@@ -363,11 +476,27 @@
                             
                             <div class="list-group">
                               
-                              <!-- Experience 1 -->
+                              <div class="list-group-item mb-4">
+                                <h5 class="mb-1">EssilorLuxottica (via Talentium Inc.)</h5>
+                                <h6 class="mb-2 text-muted">Senior Analyst Programmer / Contractor</h6>
+                                <p class="text-muted mb-0">July 2025 — Present</p>
+                                <h6 class="text-muted">Responsibilities:</h6>
+                                <ul class="mb-0">
+                                    <li>Maintained Web, SOAP & REST APIs and Console applications</li>
+                                    <li>Maintained middleware DLLs</li>
+                                    <li>Maintained legacy systems</li>
+                                    <li>Collaborated with cross-functional teams to deliver projects within Agile frameworks</li>
+                                    <li>Integrated internal systems with third-party applications</li>
+                                    <li>Conducted demos and presentations of implemented solutions to Product Owners</li>
+                                    <li>Provided product and application support</li>
+                                    <li>Performed code reviews to ensure quality and maintainability</li>
+                                </ul>
+                              </div>
+
                               <div class="list-group-item mb-4">
                                 <h5 class="mb-1">IDEMIA Philippines Inc.</h5>
                                 <h6 class="mb-2 text-muted">Senior Software Developer</h6>
-                                <p class="text-muted mb-0">September 2021 - Present</p>
+                                <p class="text-muted mb-0">September 2021 - July 2025</p>
                                 <h6 class="text-muted">Responsibilities:</h6>
                                 <ul class="mb-0">
                                     <li>Developed Web, SOAP & REST APIs, Windows services and Console apps</li>
@@ -384,7 +513,6 @@
                                 </ul>
                               </div>
                           
-                              <!-- Experience 2 -->
                               <div class="list-group-item mb-4">
                                 <h5 class="mb-1">SMITS Inc. - IT company of San Miguel Corporation</h5>
                                 <h6 class="mb-2 text-muted">.NET Developer</h6>
@@ -403,7 +531,6 @@
                                 </ul>
                               </div>
                           
-                              <!-- Experience 3 -->
                               <div class="list-group-item mb-4">
                                 <h5 class="mb-1">Service 101 Plus Consulting Inc.</h5>
                                 <h6 class="mb-2 text-muted">Enterprise Systems Specialist</h6>
@@ -445,17 +572,23 @@
                 <div class="container" style="width: 100%; max-width: 100%;">
                     <div class='row' style='width:102%;'>
                         <div class="container my-5">
-                            <div class="list-group">
-                              
-                              <!-- Education Entry for One School -->
-                              <div class="list-group-item mb-4">
-                                <h5 class="mb-1">Adamson University (Tertiary)</h5> <!-- School Name -->
-                                <h6 class="mb-2 text-muted">Bachelor of Science in Information Technology</h6> <!-- Degree -->
-                                <p class="text-muted mb-2">June 2012 - March 2016</p> <!-- Graduation Date -->                            
-                              </div>
-                          
+                            <div class="education-wrapper">
+                                <div class="education-logo" aria-hidden="true">
+                                    <img src="images/education_logo.png" alt="Adamson University logo" class="img-fluid" style="max-width:110px; border-radius:8px; background:#fff; padding:6px;" />
+                                </div>
+
+                                <div class="education-card">
+                                    <div class="list-group">
+                                      <div class="list-group-item mb-0">
+                                        <h5 class="mb-1">Adamson University</h5>
+                                        <h6 class="mb-2 text-muted">Bachelor of Science in Information Technology</h6>
+                                        <p class="text-muted mb-1">June 2012 - March 2016</p>
+                                        <p class="mb-0">Focused on software development principles, database design, and web technologies. Graduated with practical experience building applications and collaborating on team projects.</p>
+                                      </div>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
+                        </div>
                     </div>
                 </div>
         
@@ -519,7 +652,7 @@
             
                         <div class="col-lg-12">
                             <center>
-                                <font class="footerFont">© Copyright 2025. Made by Jivenlans Tabien v1.0.9.0</font> <br />
+                                <font class="footerFont">© Copyright 2025. Made by Jivenlans Tabien v1.0.10.0</font> <br />
                             </center>
                         </div>   
                     </div>
@@ -589,6 +722,10 @@
                                 <span class="badge bg-secondary">SQL</span>
                                 <span class="badge bg-secondary">.Net Framework/C#</span>
                             </p>
+                            <p>
+                                <strong>Documentation:</strong><br/>
+                                <a href="documents/Digital_Printing_Business_Website_Documentation.pdf" target="_blank" rel="noopener noreferrer">Digital_Printing_Business_Website_Documentation.pdf</a>
+                            </p>
                         </div>
 
                         <div class="modal-right">
@@ -626,6 +763,10 @@
                                 <span class="badge bg-secondary">.NET Core/C#</span>
                                 <span class="badge bg-secondary">NATS</span>
                             </p>
+                            <p>
+                                <strong>Documentation:</strong><br/>
+                                <a href="documents/NATS_Queue_Management_Utilities_Documentation.pdf" target="_blank" rel="noopener noreferrer">NATS_Queue_Management_Utilities_Documentation.pdf</a>
+                            </p>
                         </div>
 
                         <div class="modal-right">
@@ -662,12 +803,69 @@
                                 <span class="badge bg-secondary">Entity Framework Core</span> 
                                 <span class="badge bg-secondary">SQL Server</span>
                             </p>
+                            <p>
+                                <strong>Documentation:</strong><br/>
+                                <a href="documents/Blazor_ASPNET_Identity_Authentication_Documentation.pdf" target="_blank" rel="noopener noreferrer">Blazor_ASPNET_Identity_Authentication_Documentation.pdf</a>
+                            </p>
                         </div>
 
                         <div class="modal-right">
                             <button class="modal-close closeModalBtn" onclick="closeModal('modal')">&times;</button>
                             <div class="modal-right-content">
                                 <img src="images/loginBlazor/loginBlazor_1.png" alt="Image 1" /> <br/><br/>
+                            </div>
+                        </div>`;
+            }
+            else if (projectName == 'photoboothIntegration')
+            {
+                html = `<div class="modal-left"> 
+                            <p style="font-size: 22px;"><strong>Photobooth Integration with DSLRBooth Software</strong></p>
+                            <p>
+                                <strong>Project Description</strong>
+                                <ul style="list-style: none;">
+                                    <li>A custom-built control application that manages DSLRBooth sessions by automatically starting and stopping sessions, configuring the number of print copies, and ending sessions once the preset copy limit is reached—streamlining photobooth operations for events with minimal manual intervention.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Capabilities:</strong><br/>
+                                <ul>
+                                    <li>Automatically starts DSLRBooth photo sessions</li>
+                                    <li>Automatically stops and closes sessions without manual input</li>
+                                    <li>Configures the number of print copies per session</li>
+                                    <li>Enforces copy limits and ends sessions once the limit is reached</li>
+                                    <li>Reduces operator interaction during live events</li>
+                                    <li>Improves workflow efficiency and session consistency</li>
+                                    <li>Designed for reliable use in event and photobooth environments</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Technologies Used:</strong><br/><br/>
+                                <span class="badge bg-secondary">.NET Core / C#</span>
+                                <span class="badge bg-secondary">Visual Studio</span>
+                                <span class="badge bg-secondary">Log4net</span>
+                                <span class="badge bg-secondary">API</span>
+                                <span class="badge bg-secondary">RequestCatcher</span>
+                                <span class="badge bg-secondary">Postman</span>
+                            </p>
+                            <p>
+                                <strong>Documentation:</strong><br/>
+                                <a href="documents/dslrBooth_Remote_Integration_ENHANCED.pdf" target="_blank" rel="noopener noreferrer">dslrBooth_Remote_Integration_ENHANCED.pdf</a>
+                            </p>
+                        </div>
+
+                        <div class="modal-right">
+                            <button class="modal-close closeModalBtn" onclick="closeModal('modal')">&times;</button>
+                            <div class="modal-right-content">
+                                <img src="images/photoboothIntegration/photoboothIntegration_1.jpg" alt="Image 1" /> <br/><br/>
+                                <img src="images/photoboothIntegration/photoboothIntegration_2.jpg" alt="Image 2" /> <br/><br/>
+                                <img src="images/photoboothIntegration/photoboothIntegration_3.jpg" alt="Image 3" /> <br/><br/>
+                                <img src="images/photoboothIntegration/photoboothIntegration_4.jpg" alt="Image 4" /> <br/><br/>
+                                <img src="images/photoboothIntegration/photoboothIntegration_5.jpg" alt="Image 5" /> <br/><br/>
+                                <img src="images/photoboothIntegration/photoboothIntegration_6.jpg" alt="Image 6" /> <br/><br/>
+                                <img src="images/photoboothIntegration/photoboothIntegration_7.jpg" alt="Image 7" /> <br/><br/>
+                                <img src="images/photoboothIntegration/photoboothIntegration_8.jpg" alt="Image 8" /> <br/><br/>
+                                <img src="images/photoboothIntegration/photoboothIntegration_9.jpg" alt="Image 9" /> <br/><br/>
+                                <img src="images/photoboothIntegration/photoboothIntegration_10.jpg" alt="Image 10" /> <br/><br/>                         
                             </div>
                         </div>`;
             }

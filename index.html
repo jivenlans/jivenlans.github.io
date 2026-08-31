@@ -1,882 +1,555 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Jivenlans Tabien</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="plugins/fontawesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="css/site.css">
-    <link rel="stylesheet" href="css/navigation.css">
-    <link rel="stylesheet" href="css/container.css">
- 
-    <style>
-        html {
-            scroll-padding-top: 70px; /* height of your fixed navbar */
-        }
-
-        .servicesCell {
-            height: 300px;
-        }
-
-        .servicesCell:hover img {
-            transform: scale(1.5);
-        }
-
-        .topSellingProductCell {
-            cursor: pointer;
-        }
-
-        .topSellingProductCell {
-            height: 300px;
-            width: 100%;
-            border: 1px solid transparent;
-            background-color: white;
-            border-radius: 10px;
-            -webkit-box-shadow: 0 0 5px 2px gray;
-            -moz-box-shadow: 0 0 5px 2px gray;
-            box-shadow: 0 0 5px 2px gray;
-        }
-
-        .topSellingProductCell .serviceCellImage {
-            width: 100%;
-            transition: 0.5s all ease-in-out;
-        }
-
-        .topSellingProductCell:hover .serviceCellImage {
-            transform: scale(1.1);
-            z-index: -9999;
-        }
-
-        .servicesCellInnerContainer {
-            height: 90%;
-            width: 90%;
-            border: 1px solid transparent;
-            background-color: #ffeec2;
-            border-radius: 10px;
-            padding-top: 20px;
-            cursor: pointer;
-        }
-
-        .servicesCellInnerContainer:hover .serviceCellImage {
-            transform: scale(1.1);
-            z-index: -9999;
-        }
-
-        .servicesCellInnerContainer .serviceCellImage {
-            width: 100%;
-            transition: 0.5s all ease-in-out;
-        }
-
-        .footer {
-            position: relative;
-            bottom: 0;
-        }
-
-        input, select, textarea {
-            max-width: 100%;
-        }
-
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            display: none; /* Hidden by default */
-            justify-content: center;
-            align-items: center;
-            z-index: 9999; /* Ensures modal is on top */
-        }
-
-        .modal-content {
-            background: #fff;
-            display: flex;
-            flex-direction: row;
-            width: 95%;
-            max-width: 1400px;
-            max-height: 95vh;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 22px;
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-
-        /* Left side for description */
-        .modal-left {
-            width: 30%;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        /* Right side for images */
-        .modal-right {
-            width: 70%;
-            padding: 20px;
-            border-left: 1px solid #ccc;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        /* Image styles */
-        .modal-right-content img {
-            width: 100%;
-            border-radius: 5px;
-            object-fit: cover;
-        }
-
-        .modal-right-content 
-        {
-            width: 100%;
-            padding: 20px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 3px;
-        }
-
-        .modal-close 
-        {
-            top: -14px;
-            right: -9px;
-        }
-
-        /* Button styling */
-        button {
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-
-        /* Show modal when active */
-        .modal-overlay.active {
-            display: flex; /* Make modal visible */
-        }
-
-        @media (max-width: 991px) {
-            .modal-content {
-                flex-direction: column;
-                overflow-y: auto;
-                margin-top: 40px;
-            }
-            .modal-left,
-            .modal-right-content {
-                width: 100%;
-                border-left: none;
-                overflow-y: visible;
-            }
-            .modal-right
-            {
-                width: 100%;
-                padding-left: 0;
-                padding-right: 0;
-                overflow-y: visible;
-            }
-            .innerMainContainer
-            {
-                padding-left: 3%;
-                padding-right: 3%;
-            }
-        }
-
-        /* Education section styling */
-        .education-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            background: #ffffff10;
-            padding: 18px;
-            border-radius: 10px;
-            max-width: 900px;
-            margin: 0 auto;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-        }
-
-        .education-logo {
-            flex: 0 0 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .education-logo svg {
-            width: 110px;
-            height: 110px;
-        }
-
-        .education-card {
-            flex: 1 1 auto;
-        }
-
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio of Jivenlans Tabien, a software developer specializing in .NET, Blazor, APIs, integration, and background services." />
+    <title>Jivenlans Tabien | Software Developer</title>
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/navigation.css" />
+    <link rel="stylesheet" href="css/container.css" />
 </head>
-<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="82" tabindex="0">
-    <script>
-        window.rootUrl = "/";
-    </script>
-
-    <div class="modal-overlay" id="modal">
-        <div class="modal-content"></div>
-    </div>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black mainNavBar sticky">
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="96" tabindex="0">
+    <nav class="navbar navbar-expand-lg mainNavBar fixed-top">
         <div class="container-fluid">
-            <strong class="navbar-brand" href="#" style="font-size: 20px;">Jiven's Portfolio</strong>
+            <a class="navbar-brand" href="#About" aria-label="Jivenlans Tabien home">
+                <span class="brand-mark">JT</span>
+                <span>Jivenlans Tabien</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <!-- This will align items to the right -->
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#About" style="color: white;">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#Projects" style="color: white;">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#Experiences" style="color: white;">Experiences</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#Education" style="color: white;">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#Contact" style="color: white;">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div id="pageContainer" class="container-fluid body-content">
-
-        <div class=".container-fluid contentContainers" id="firstContentContainer">
-
-            <section id="About" class="innerMainContainer profileContainer hero">
-                <br />    
-                    <div class="container" style="width: 100%; max-width: 100%;">
-                    <div class='row' style='width:102%; border: 1px solid transparent;'>
-                        <div class="col-lg-6" style="border: 1px solid transparent; display: flex; align-items: center; padding-bottom: 27px;">
-                            <p class="mbr-text mbr-fonts-style mb-12 display-12 col-lg-12" style="font-size: 20px;">
-
-                                <strong style="font-size: 30px;">Hi! I'm Jivenlans Tabien</strong>
-
-                                <br/><br/>
-
-                                I am a <strong>Software Developer</strong> with over 9 years of experience designing and delivering scalable, production-ready applications — including <strong>web applications</strong>, <strong>APIs</strong> (SOAP &amp; REST), and <strong>background services</strong>. I specialize in building performant, maintainable systems using <strong>.NET Core</strong>, <strong>Blazor</strong>, and <strong>JavaScript</strong>, and I focus on delivering user-friendly solutions that integrate reliably across services.
-
-                                <br/><br/>
-
-                                I’ve worked on projects for organizations in healthcare, finance, retail and manufacturing — including <strong>hospitals</strong>, <strong>banks</strong>, an <strong>eyecare &amp; eyeglasses company</strong>, and one of the largest <strong>alcohol producers</strong> in the Philippines.
-
-                                <br/> <br/>
-
-                                View my resume here: <a href="documents/Resume - Jivenlans Tabien.pdf" target="_blank" rel="noopener noreferrer">Resume - Jivenlans Tabien.pdf</a>
-                                </p>
-                            </p>
-
-                            <br/>
-                            <br/>
+    <main id="pageContainer">
+        <section id="About" class="hero-section section-band">
+            <div class="container-fluid">
+                <div class="hero-grid">
+                    <div class="hero-copy">
+                        <p class="eyebrow">Software Developer</p>
+                        <h1>Jivenlans Tabien</h1>
+                        <p class="lead">
+                            I build production-ready web applications, APIs, integrations, and background services with a practical focus on reliability, maintainability, and clean delivery.
+                        </p>
+                        <p>
+                            My work spans healthcare, finance, retail, manufacturing, and enterprise operations, including systems for hospitals, banks, eyecare and eyeglasses companies, and one of the largest alcohol producers in the Philippines.
+                        </p>
+                        <div class="hero-actions">
+                            <a class="btn btn-primary" href="#Projects">
+                                <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                                View Projects
+                            </a>
+                            <a class="btn btn-outline" href="documents/Resume - Jivenlans Tabien.pdf" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+                                Resume
+                            </a>
                         </div>
-                        <div class="col-lg-6 visual-column" style="border: 1px solid transparent; display: flex; align-items: center; ">
-                            <div class="image-wrap">
-                                <img src="images/profile_picture.jpg" class="profile-image" alt="Profile picture" />
+                    </div>
+
+                    <div class="hero-panel" aria-label="Profile summary">
+                        <img src="images/profile_picture.jpg" alt="Jivenlans Tabien profile picture" class="profile-image" />
+                        <div class="quick-stats">
+                            <div>
+                                <strong>10+</strong>
+                                <span>years experience</span>
+                            </div>
+                            <div>
+                                <strong>.NET</strong>
+                                <span>Core, MVC, Blazor</span>
+                            </div>
+                            <div>
+                                <strong>APIs</strong>
+                                <span>SOAP, REST, integrations</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- <p><strong>Skills:</strong></p> -->
-                <!-- Skills cards: placed below description and image -->
-                <div class="container" style="width:100%; max-width:100%;">
-                    <div class="row" style="width:102%;">
-                        <div class="col-12">
-                            <div class="skills-stack">
-                                <div class="skills-col">
-                                    <div class="skill-card">
-                                        <h6>Application Types</h6>
-                                        <ul class="skill-list">
-                                            <li>Web</li>
-                                            <li>Web APIs/Services (SOAP &amp; REST)</li>
-                                            <li>Background Services / Console Applications</li>
-                                        </ul>
-                                    </div>
-                                    <div class="skill-card">
-                                        <h6>Databases &amp; Data Access</h6>
-                                        <ul class="skill-list">
-                                            <li>SQL Server</li>
-                                            <li>SQLite</li>
-                                            <li>PostgreSQL</li>
-                                            <li>MySQL</li>
-                                            <li>Entity Framework Core</li>
-                                            <li>ADO.NET</li>
-                                        </ul>
-                                    </div>
-                                    <div class="skill-card">
-                                        <h6>Reporting</h6>
-                                        <ul class="skill-list">
-                                            <li>SSRS</li>
-                                            <li>ClosedXML</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                <div class="skills-showcase" aria-label="Technical capabilities">
+                    <section class="skill-category" aria-labelledby="backendSkillsTitle">
+                        <h3 id="backendSkillsTitle">Backend & Frameworks</h3>
+                        <div class="skill-list">
+                            <span>C#</span>
+                            <span>.NET Core</span>
+                            <span>.NET 9</span>
+                            <span>ASP.NET MVC</span>
+                            <span>ASP.NET Core Web API</span>
+                            <span>Blazor</span>
+                            <span>Entity Framework Core</span>
+                        </div>
+                    </section>
+                    <section class="skill-category" aria-labelledby="frontendSkillsTitle">
+                        <h3 id="frontendSkillsTitle">Frontend & UI</h3>
+                        <div class="skill-list">
+                            <span>React</span>
+                            <span>TypeScript</span>
+                            <span>JavaScript</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Bootstrap</span>
+                        </div>
+                    </section>
+                    <section class="skill-category" aria-labelledby="messagingSkillsTitle">
+                        <h3 id="messagingSkillsTitle">APIs, Messaging & Background Work</h3>
+                        <div class="skill-list">
+                            <span>REST APIs</span>
+                            <span>SOAP</span>
+                            <span>NATS</span>
+                            <span>Kafka</span>
+                            <span>Azure Queues</span>
+                            <span>Hangfire</span>
+                            <span>SignalR</span>
+                        </div>
+                    </section>
+                    <section class="skill-category" aria-labelledby="dataSkillsTitle">
+                        <h3 id="dataSkillsTitle">Data & Storage</h3>
+                        <div class="skill-list">
+                            <span>SQL Server</span>
+                            <span>PostgreSQL</span>
+                            <span>Supabase</span>
+                            <span>Google Cloud Datastore</span>
+                            <span>Azure Blob Storage</span>
+                        </div>
+                    </section>
+                    <section class="skill-category" aria-labelledby="cloudSkillsTitle">
+                        <h3 id="cloudSkillsTitle">Cloud, Deployment & DevOps</h3>
+                        <div class="skill-list">
+                            <span>Azure Web App Service</span>
+                            <span>Azure Functions</span>
+                            <span>Google Cloud Run Functions</span>
+                            <span>Railway</span>
+                            <span>Cloudflare</span>
+                            <span>Docker</span>
+                        </div>
+                    </section>
+                    <section class="skill-category" aria-labelledby="monitoringSkillsTitle">
+                        <h3 id="monitoringSkillsTitle">Monitoring & Integrations</h3>
+                        <div class="skill-list">
+                            <span>Azure Application Insights</span>
+                            <span>CDyne</span>
+                            <span>Mailgun</span>
+                            <span>Twilio</span>
+                            <span>Serilog</span>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
 
-                                <div class="skills-col">
-                                    <div class="skill-card">
-                                        <h6>Languages</h6>
-                                        <ul class="skill-list">
-                                            <li>C# (.NET Framework, .NET Core)</li>
-                                            <li>JavaScript</li>
-                                            <li>SQL</li>
-                                            <li>HTML / CSS</li>
-                                        </ul>
-                                    </div>
-                                    <div class="skill-card">
-                                        <h6>Logging</h6>
-                                        <ul class="skill-list">
-                                            <li>Serilog</li>
-                                            <li>Datadog</li>
-                                            <li>Log4net</li>
-                                        </ul>
-                                    </div>
-                                    <div class="skill-card">
-                                        <h6>File Transfer</h6>
-                                        <ul class="skill-list">
-                                            <li>SFTP</li>
-                                            <li>FTP</li>
-                                        </ul>
-                                    </div>
-                                </div>
+        <section id="Projects" class="section-band section-dark">
+            <div class="container-fluid">
+                <div class="section-heading">
+                    <p class="eyebrow">Selected Work</p>
+                    <h2>Applications, libraries, and practical builds</h2>
+                    <p>Production-ready applications are separated from focused practice projects, training builds, and reusable libraries.</p>
+                </div>
 
-                                <div class="skills-col">
-                                    <div class="skill-card">
-                                        <h6>Web Frameworks &amp; Technologies</h6>
-                                        <ul class="skill-list">
-                                            <li>ASP.NET Core API</li>
-                                            <li>ASP.NET MVC</li>
-                                            <li>ASP.NET Webforms</li>
-                                            <li>Blazor</li>
-                                            <li>Swagger</li>
-                                            <li>AJAX, SignalR, jQuery, Bootstrap</li>
-                                        </ul>
-                                    </div>
-                                    <div class="skill-card">
-                                        <h6>Async Messaging &amp; Background Jobs</h6>
-                                        <ul class="skill-list">
-                                            <li>NATS</li>
-                                            <li>Kafka</li>
-                                            <li>Azure Queues</li>
-                                            <li>Hangfire</li>
-                                            <li>SQL Jobs</li>
-                                        </ul>
-                                    </div>
-                                    <div class="skill-card">
-                                        <h6>Dev &amp; API Testing Tools</h6>
-                                        <ul class="skill-list">
-                                            <li>Visual Studio</li>
-                                            <li>Visual Studio Code</li>
-                                            <li>Mockoon</li>
-                                            <li>Postman</li>
-                                            <li>SOAPUI</li>
-                                        </ul>
-                                    </div>
+                <div class="project-showcase" id="projectGrid"></div>
+            </div>
+        </section>
+
+        <section id="Experience" class="section-band">
+            <div class="container-fluid">
+                <div class="section-heading">
+                    <p class="eyebrow">Career</p>
+                    <h2>Professional experience</h2>
+                    <p>Progressive roles across enterprise systems, application development, integrations, support, code review, and mentoring.</p>
+                </div>
+
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-date">July 2025 - Present</div>
+                        <div class="timeline-card">
+                            <h3>EssilorLuxottica <span>via Talentium Inc.</span></h3>
+                            <p class="role">Senior Analyst Programmer / Contractor</p>
+                            <ul>
+                                <li>Maintains web applications, SOAP and REST APIs, console applications, middleware DLLs, and legacy systems.</li>
+                                <li>Integrates internal systems with third-party applications and supports production workflows.</li>
+                                <li>Performs code reviews and presents implemented solutions to product owners.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-date">September 2021 - July 2025</div>
+                        <div class="timeline-card">
+                            <h3>IDEMIA Philippines Inc.</h3>
+                            <p class="role">Senior Software Developer</p>
+                            <ul>
+                                <li>Developed web apps, SOAP and REST APIs, Windows services, console applications, and Blazor Server apps with SSO integration.</li>
+                                <li>Spearheaded migration of legacy systems to .NET Core and designed applications from the ground up.</li>
+                                <li>Supported products, reviewed code, mentored developers, and delivered Agile team outcomes.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-date">September 2018 - August 2021</div>
+                        <div class="timeline-card">
+                            <h3>SMITS Inc. <span>IT company of San Miguel Corporation</span></h3>
+                            <p class="role">.NET Developer</p>
+                            <ul>
+                                <li>Built web applications, SOAP and REST APIs, Windows services, and console applications.</li>
+                                <li>Implemented SAP integrations and maintained legacy systems.</li>
+                                <li>Delivered demos, production support, code reviews, and mentoring.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-date">March 2016 - July 2018</div>
+                        <div class="timeline-card">
+                            <h3>Service 101 Plus Consulting Inc.</h3>
+                            <p class="role">Enterprise Systems Specialist</p>
+                            <ul>
+                                <li>Developed web applications, REST APIs, and mobile application features.</li>
+                                <li>Handled SAP integration, product support, and client demos.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-date">June 2015 - September 2015</div>
+                        <div class="timeline-card">
+                            <h3>Infoman Inc.</h3>
+                            <p class="role">Web Developer Intern</p>
+                            <ul>
+                                <li>Contributed to web application development work during internship.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="Education" class="section-band section-muted">
+            <div class="container-fluid">
+                <div class="section-heading">
+                    <p class="eyebrow">Education</p>
+                    <h2>Academic foundation</h2>
+                </div>
+
+                <article class="education-card">
+                    <img src="images/education_logo.png" alt="Adamson University logo" />
+                    <div>
+                        <h3>Adamson University</h3>
+                        <p class="role">Bachelor of Science in Information Technology</p>
+                        <p class="date-line">June 2012 - March 2016</p>
+                        <p>Focused on software development principles, database design, and web technologies, with practical experience building applications and collaborating on team projects.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="Contact" class="section-band contact-section">
+            <div class="container-fluid">
+                <div class="contact-grid">
+                    <div>
+                        <p class="eyebrow">Contact</p>
+                        <h2>Let us talk about systems, integrations, and practical delivery.</h2>
+                        <p>
+                            I am available for software development roles and project work focused on .NET applications, APIs, integrations, and production support.
+                        </p>
+                        <div class="contact-details" aria-label="Contact details">
+                            <div class="contact-detail">
+                                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                <div>
+                                    <span>Email</span>
+                                    <strong>jivelans_tabien@outlook.com</strong>
                                 </div>
                             </div>
+                            <div class="contact-detail">
+                                <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+                                <div>
+                                    <span>Mobile</span>
+                                    <strong>+63 935 877 7395</strong>
+                                </div>
+                            </div>
+                            <div class="contact-detail">
+                                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                                <div>
+                                    <span>LinkedIn</span>
+                                    <strong><a href="https://www.linkedin.com/in/jivenlans-tabien/" target="_blank" rel="noopener noreferrer">linkedin.com/in/jivenlans-tabien</a></strong>
+                                </div>
+                            </div>
+                            <div class="contact-detail">
+                                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                <div>
+                                    <span>Location</span>
+                                    <strong>Philippines</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-actions">
+                            <a class="btn btn-primary" href="documents/Resume - Jivenlans Tabien.pdf" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+                                Resume
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+    </main>
 
-                <br />
-                <br />
-            </section>  
-        
-            <section id="Projects" class="innerMainContainer divBlueBackground">
-                <br />
-                <center><h2 class="whiteFont" style="font-family: fantasy; font-weight: 1000;">Personal Projects</h2></center>       
-                <div class="container" style="width: 100%; max-width: 100%;">
-                    <div class='row' style='width:102%;'>
+    <footer class="site-footer">
+        <div class="container-fluid">
+            <span>Copyright 2026 Jivenlans Tabien.</span>
+            <a href="#About" aria-label="Back to top">
+                <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+            </a>
+        </div>
+    </footer>
 
-                        <div class="col-lg-6" onclick="openProjectModal(this)" modal="modal" projectName="printingShopServices" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
-                            <div class="topSellingProductCell">
-    
-                                <div class="serviceCellImage" style="border: 1px solid transparent; width: 100%; height: 90%; background-image: url('images/product_1.png'); background-repeat: no-repeat; background-size: 90% 90%; background-position: center;">
-    
-                                </div>
-                                <div style="width: 100%; border: 1px solid transparent; display: flex; align-items: center; justify-content: center; ">
-                                    <center><b class="normalFont" style="font-size: 15px; font-family: sans-serif;">Digital Printing Business Website</b></center>
-                                </div>
-    
-                            </div>
-                        </div>
-                        <div class="col-lg-6" onclick="openProjectModal(this)" modal="modal" projectName="natsUtilities" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
-                            <div class="topSellingProductCell">
-    
-                                <div class="serviceCellImage" style="border: 1px solid transparent; width: 100%; height: 90%; background-image: url('images/product_2.png'); background-repeat: no-repeat; background-size: 90% 90%; background-position: center;">
-    
-                                </div>
-                                <div style="width: 100%; border: 1px solid transparent; display: flex; align-items: center; justify-content: center; ">
-                                    <center><b class="normalFont" style="font-size: 15px; font-family: sans-serif;">NATS Queue Management Utilities</b></center>
-                                </div>
-    
-                            </div>
-                        </div>
-                        <div class="col-lg-6" onclick="openProjectModal(this)" modal="modal" projectName="loginBlazor" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
-                            <div class="topSellingProductCell">
-    
-                                <div class="serviceCellImage" style="border: 1px solid transparent; width: 100%; height: 90%; background-image: url('images/product_3.png'); background-repeat: no-repeat; background-size: 90% 90%; background-position: center;">
-    
-                                </div>
-                                <div style="width: 100%; border: 1px solid transparent; display: flex; align-items: center; justify-content: center; ">
-                                    <center><b class="normalFont" style="font-size: 15px; font-family: sans-serif;">User Authentication in Blazor Using ASP.NET Identity</b></center>
-                                </div>
-    
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6" onclick="openProjectModal(this)" modal="modal" projectName="photoboothIntegration" style="display: flex; justify-content: center; vertical-align: central; padding-top: 25px;">
-                            <div class="topSellingProductCell">
-    
-                                <div class="serviceCellImage" style="border: 1px solid transparent; width: 100%; height: 90%; background-image: url('images/product_4.png'); background-repeat: no-repeat; background-size: 90% 90%; background-position: center;">
-    
-                                </div>
-                                <div style="width: 100%; border: 1px solid transparent; display: flex; align-items: center; justify-content: center; ">
-                                    <center><b class="normalFont" style="font-size: 15px; font-family: sans-serif;">Photobooth Integration with DSLRBooth Software</b></center>
-                                </div>
-    
-                            </div>
-                        </div>
-                    </div>
-                </div>   
-                <br />
-                <br />
-            </section>
-        
-            <section id="Experiences" class="innerMainContainer" style="background-color: whitesmoke;">
-                <br /> 
-
-                <center><h2 style="font-family: fantasy; font-weight: 1000;"> Professional Experiences </h2></center>
-
-                <div class="container" style="width: 100%; max-width: 100%;">
-                    <div class='row' style='width:102%;'>
-
-                        <div class="container my-5">
-                            
-                            <div class="list-group">
-                              
-                              <div class="list-group-item mb-4">
-                                <h5 class="mb-1">EssilorLuxottica (via Talentium Inc.)</h5>
-                                <h6 class="mb-2 text-muted">Senior Analyst Programmer / Contractor</h6>
-                                <p class="text-muted mb-0">July 2025 — Present</p>
-                                <h6 class="text-muted">Responsibilities:</h6>
-                                <ul class="mb-0">
-                                    <li>Maintained Web, SOAP & REST APIs and Console applications</li>
-                                    <li>Maintained middleware DLLs</li>
-                                    <li>Maintained legacy systems</li>
-                                    <li>Collaborated with cross-functional teams to deliver projects within Agile frameworks</li>
-                                    <li>Integrated internal systems with third-party applications</li>
-                                    <li>Conducted demos and presentations of implemented solutions to Product Owners</li>
-                                    <li>Provided product and application support</li>
-                                    <li>Performed code reviews to ensure quality and maintainability</li>
-                                </ul>
-                              </div>
-
-                              <div class="list-group-item mb-4">
-                                <h5 class="mb-1">IDEMIA Philippines Inc.</h5>
-                                <h6 class="mb-2 text-muted">Senior Software Developer</h6>
-                                <p class="text-muted mb-0">September 2021 - July 2025</p>
-                                <h6 class="text-muted">Responsibilities:</h6>
-                                <ul class="mb-0">
-                                    <li>Developed Web, SOAP & REST APIs, Windows services and Console apps</li>
-                                    <li>Developed Blazor Server application with SSO Integration</li>
-                                    <li>Designed and implemented applications from ground-up</li>
-                                    <li>Spearheaded the migration of legacy systems to .NET Core</li>
-                                    <li>Maintained legacy sytems</li>
-                                    <li>Collaborated with cross-functional teams to deliver projects within Agile frameworks</li>
-                                    <li>Integration with other application and third-party application</li>
-                                    <li>Conducted demo/presentation of implemented projects to Product Owner</li>
-                                    <li>Conducted Product support</li>
-                                    <li>Conducted code reviews</li>
-                                    <li>Mentored other devs</li>
-                                </ul>
-                              </div>
-                          
-                              <div class="list-group-item mb-4">
-                                <h5 class="mb-1">SMITS Inc. - IT company of San Miguel Corporation</h5>
-                                <h6 class="mb-2 text-muted">.NET Developer</h6>
-                                <p class="text-muted mb-0">September 2018 - August 2021</p>
-                                <h6 class="text-muted">Responsibilities:</h6>
-                                <ul class="mb-0">
-                                    <li>Developed Web, SOAP & REST APIs, Windows services and Console apps</li>
-                                    <li>Integration with SAP</li>
-                                    <li>Designed and implemented applications from ground-up</li>
-                                    <li>Maintained legacy sytems</li>
-                                    <li>Collaborated with cross-functional teams to deliver projects within Agile frameworks</li>
-                                    <li>Conducted demo/presentation of implemented projects to clients</li>
-                                    <li>Conducted Product support</li>
-                                    <li>Conducted code reviews</li>
-                                    <li>Mentored other devs</li>
-                                </ul>
-                              </div>
-                          
-                              <div class="list-group-item mb-4">
-                                <h5 class="mb-1">Service 101 Plus Consulting Inc.</h5>
-                                <h6 class="mb-2 text-muted">Enterprise Systems Specialist</h6>
-                                <p class="text-muted mb-0">March 2016 - July 2018</p>
-                                <h6 class="text-muted">Responsibilities:</h6>
-                                <ul class="mb-0">
-                                    <li>Developed Web, REST APIs and Mobile application</li>
-                                    <li>Integration with SAP</li>
-                                    <li>Conducted Product support</li>
-                                    <li>Conducted demo/presentation of implemented projects to clients</li>
-                                </ul>
-                              </div>
-
-                              <div class="list-group-item mb-4">
-                                <h5 class="mb-1">Infoman Inc.</h5>
-                                <h6 class="mb-2 text-muted">Web Developer (Intern)</h6>
-                                <p class="text-muted mb-0">June 2015 - September 2015</p>
-                                <h6 class="text-muted">Responsibilities:</h6>
-                                <ul class="mb-0">
-                                    <li>Web Application Development</li>
-                                </ul>
-                              </div>
-                              
-                            </div>
-                          </div>
-
-                    </div>
-                </div>
-        
-                <br />
-                <br />
-            </section>
-
-            <section id="Education" class="innerMainContainer divBlueBackground">
-                <br /> 
-
-                <center><h2 class="whiteFont" style="font-family: fantasy; font-weight: 1000;">Education</h2></center>
-
-                <div class="container" style="width: 100%; max-width: 100%;">
-                    <div class='row' style='width:102%;'>
-                        <div class="container my-5">
-                            <div class="education-wrapper">
-                                <div class="education-logo" aria-hidden="true">
-                                    <img src="images/education_logo.png" alt="Adamson University logo" class="img-fluid" style="max-width:110px; border-radius:8px; background:#fff; padding:6px;" />
-                                </div>
-
-                                <div class="education-card">
-                                    <div class="list-group">
-                                      <div class="list-group-item mb-0">
-                                        <h5 class="mb-1">Adamson University</h5>
-                                        <h6 class="mb-2 text-muted">Bachelor of Science in Information Technology</h6>
-                                        <p class="text-muted mb-1">June 2012 - March 2016</p>
-                                        <p class="mb-0">Focused on software development principles, database design, and web technologies. Graduated with practical experience building applications and collaborating on team projects.</p>
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <br />
-                <br />
-            </section>
-
-            <section id="Contact" class="innerMainContainer" style="background-color: whitesmoke;">
-                <br /> 
-
-                <center><h2 style="font-family: fantasy; font-weight: 1000;"> Contact </h2></center>
-
-                <div class="container" style="width: 100%; max-width: 100%;">
-                    <div class='row' style='width:102%;'>                   
-                        <br />
-                        <br />
-                
-                        <div class="container" style="width: 100%; max-width: 100%; height: 100%;">
-                
-                            <form id="quotationForm" class="needs-validation" novalidate>
-                
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="name" placeholder="Enter your name (required)" required>
-                                    <div class="invalid-feedback">
-                                        Name is required.
-                                    </div>
-                                </div>
-                                <br />                   
-                
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="subject" placeholder="Enter subject (optional)">
-                                </div>
-                                <br />
-                
-                                <div class="form-group">
-                                    <textarea class="form-control" id="message" rows="10" placeholder="Enter your message (required)" required></textarea>
-                                    <div class="invalid-feedback">
-                                        Message is required.
-                                    </div>
-                                </div>
-                                <br />
-                
-                                <div class="form-group">
-                                    <button type="button" style="float: right;" class="btn btn-primary divBlueBackground" 
-                                    onclick="alert('Feature coming soon in version 1.1.0.0.\n\nFor now, you can reach out at tjivenlans@gmail.com.\n\nThanks for your patience!')">Submit</button>
-                                </div>
-                
-                            </form>
-                
-                        </div>
-                    </div>
-                </div>
-        
-                <br />
-                <br />
-            </section>
-        
-            <section class="footer divBlueBackground">
-                <div class="container" style="width: 100%; max-width: 100%;">
-                    <div class='row' style='width:102%;'>
-            
-                        <div class="col-lg-12">
-                            <center>
-                                <font class="footerFont">© Copyright 2025. Made by Jivenlans Tabien v1.0.11.0</font> <br />
-                            </center>
-                        </div>   
-                    </div>
-                </div>
-            </section>
-        </div>        
+    <div class="modal-overlay" id="projectModal" aria-hidden="true">
+        <div class="project-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" type="button" aria-label="Close project details">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+            <div class="modal-body" id="projectModalBody"></div>
+        </div>
     </div>
 
     <script>
-
-        //EVENT LISTENERS
-        window.addEventListener('click', (e) => {
-            const modal = document.getElementById('modal');
-
-            if (e.target === modal) {
-                modal.classList.remove('active');
+        const projects = [
+            {
+                id: "printingShopServices",
+                category: "production",
+                title: "Digital Printing Business Website",
+                image: "images/product_1.png",
+                summary: "A client-facing website for a family printing business, built to present services, pricing context, location details, and quote inquiries.",
+                capabilities: [
+                    "Displays available printing services and business details.",
+                    "Presents location, prices, and social media touchpoints.",
+                    "Supports quotation inquiries through the website flow."
+                ],
+                technologies: ["HTML", "CSS", "Bootstrap", "JavaScript", "jQuery", "SQL", ".NET Framework", "C#"],
+                document: "documents/Digital_Printing_Business_Website_Documentation.pdf",
+                screenshots: [
+                    "images/printingShopServices/printingShopServices_1.jpg",
+                    "images/printingShopServices/printingShopServices_2.jpg",
+                    "images/printingShopServices/printingShopServices_3.jpg",
+                    "images/printingShopServices/printingShopServices_4.jpg",
+                    "images/printingShopServices/printingShopServices_5.jpg",
+                    "images/printingShopServices/printingShopServices_6.jpg"
+                ]
+            },
+            {
+                id: "natsUtilities",
+                category: "practice",
+                title: "NATS Queue Management Utilities",
+                image: "images/product_2.png",
+                summary: "A .NET class library that simplifies NATS-based messaging for scalable, event-driven application workflows.",
+                capabilities: [
+                    "Publishes messages to NATS subjects.",
+                    "Subscribes to and processes queue messages in real time.",
+                    "Designed for future JetStream persistence support."
+                ],
+                technologies: [".NET Core", "C#", "NATS"],
+                document: "documents/NATS_Queue_Management_Utilities_Documentation.pdf",
+                screenshots: ["images/natsUtilities/natsUtilities_1.png"]
+            },
+            {
+                id: "loginBlazor",
+                category: "practice",
+                title: "Blazor Authentication with ASP.NET Identity",
+                image: "images/product_3.png",
+                summary: "A practical Blazor authentication implementation using ASP.NET Identity, authorization attributes, and Entity Framework Core.",
+                capabilities: [
+                    "Implements login and logout flows.",
+                    "Uses ASP.NET Core authorization to protect authenticated areas.",
+                    "Sets up landing behavior around authenticated and unauthenticated states."
+                ],
+                technologies: ["Blazor", ".NET Core", "C#", "ASP.NET Identity", "Entity Framework Core", "SQL Server"],
+                document: "documents/Blazor_ASPNET_Identity_Authentication_Documentation.pdf",
+                screenshots: ["images/loginBlazor/loginBlazor_1.png"]
+            },
+            {
+                id: "photoboothIntegration",
+                category: "production",
+                title: "DSLRBooth Photobooth Integration",
+                image: "images/product_4.png",
+                summary: "A control application that automates DSLRBooth sessions, print copy counts, and event workflow limits.",
+                capabilities: [
+                    "Starts and stops DSLRBooth sessions automatically.",
+                    "Configures print copy counts per session.",
+                    "Ends sessions when the preset copy limit is reached.",
+                    "Reduces operator interaction during live events."
+                ],
+                technologies: [".NET Core", "C#", "Visual Studio", "Log4net", "API", "RequestCatcher", "Postman"],
+                document: "documents/dslrBooth_Remote_Integration_ENHANCED.pdf",
+                screenshots: [
+                    "images/photoboothIntegration/photoboothIntegration_1.jpg",
+                    "images/photoboothIntegration/photoboothIntegration_2.jpg",
+                    "images/photoboothIntegration/photoboothIntegration_3.jpg",
+                    "images/photoboothIntegration/photoboothIntegration_4.jpg",
+                    "images/photoboothIntegration/photoboothIntegration_5.jpg",
+                    "images/photoboothIntegration/photoboothIntegration_6.jpg",
+                    "images/photoboothIntegration/photoboothIntegration_7.jpg",
+                    "images/photoboothIntegration/photoboothIntegration_8.jpg",
+                    "images/photoboothIntegration/photoboothIntegration_9.jpg",
+                    "images/photoboothIntegration/photoboothIntegration_10.jpg"
+                ]
+            },
+            {
+                id: "badmintonAthleteAccreditation",
+                category: "production",
+                title: "Badminton Athlete Accreditation",
+                image: "images/badmintonAthleteAccreditation/Instructor-Dashboard.png",
+                summary: "A role-based accreditation operations system for badminton programs, covering participant registration, payment proof tracking, instructor workflows, attendance, grading, feedback, certification readiness, and reporting.",
+                capabilities: [
+                    "Manages participant registration, payment proof submission, and approval workflows.",
+                    "Provides separate instructor and participant portals with role-based access.",
+                    "Supports course selection, walk-ins, attendance tracking, grading, feedback, and certification readiness.",
+                    "Includes reporting flows and email-ready operational tracking."
+                ],
+                technologies: [
+                    "React",
+                    "TypeScript",
+                    "Vite",
+                    "Bootstrap",
+                    ".NET 9",
+                    "ASP.NET Core Web API",
+                    "Entity Framework Core",
+                    "PostgreSQL",
+                    "JWT Authentication",
+                    "FluentValidation",
+                    "Serilog",
+                    "xUnit",
+                    "Docker",
+                    "Azure Web App Service",
+                    "Railway (older version)",
+                    "Cloudflare",
+                    "Mailgun",
+                    "Supabase"
+                ],
+                screenshots: [
+                    "images/badmintonAthleteAccreditation/Instructor-Login.png",
+                    "images/badmintonAthleteAccreditation/Instructor-Dashboard.png",
+                    "images/badmintonAthleteAccreditation/Instructor-Attendance.png",
+                    "images/badmintonAthleteAccreditation/Instructor-Grading.png",
+                    "images/badmintonAthleteAccreditation/Participant-Certification.png",
+                    "images/badmintonAthleteAccreditation/Participant-Payment-Proof.png"
+                ]
             }
-        }); 
+        ];
 
-        //FUNCTIONS
-        function openProjectModal(elm)
-        {
-            const modal = document.getElementById(elm.getAttribute('modal'));
+        const projectCategories = [
+            {
+                id: "production",
+                title: "Production-Ready Applications",
+                description: "Complete, workflow-oriented applications built for real users, business context, or live operational use."
+            },
+            {
+                id: "practice",
+                title: "Practice Projects & Reusable Libraries",
+                description: "Focused training builds, technical demos, and self-contained libraries for learning, reuse, or experimentation."
+            }
+        ];
 
-            document.querySelector('#' + elm.getAttribute('modal') + ' .modal-content').innerHTML = generateProjectContent(elm.getAttribute('projectName'));
+        const projectGrid = document.getElementById("projectGrid");
+        const modal = document.getElementById("projectModal");
+        const modalBody = document.getElementById("projectModalBody");
+        const closeModalButton = modal.querySelector(".modal-close");
 
-            modal.classList.add('active');
+        projectGrid.innerHTML = projectCategories.map((category) => {
+            const categoryProjects = projects.filter((project) => project.category === category.id);
+
+            return `
+                <section class="project-category" aria-labelledby="${category.id}Title">
+                    <div class="project-category-header">
+                        <h3 id="${category.id}Title">${category.title}</h3>
+                        <p>${category.description}</p>
+                    </div>
+                    <div class="project-grid">
+                        ${categoryProjects.map((project) => `
+                            <article class="project-card">
+                                <button type="button" class="project-trigger" data-project="${project.id}" aria-label="Open details for ${project.title}">
+                                    <span class="project-media">
+                                        <img src="${project.image}" alt="${project.title} preview" loading="lazy" />
+                                    </span>
+                                    <span class="project-content">
+                                        <span class="project-kicker">${project.technologies.slice(0, 3).join(" / ")}</span>
+                                        <strong>${project.title}</strong>
+                                        <span>${project.summary}</span>
+                                    </span>
+                                </button>
+                            </article>
+                        `).join("")}
+                    </div>
+                </section>
+            `;
+        }).join("");
+
+        projectGrid.addEventListener("click", (event) => {
+            const trigger = event.target.closest("[data-project]");
+            if (!trigger) {
+                return;
+            }
+
+            const project = projects.find((item) => item.id === trigger.dataset.project);
+            if (project) {
+                openProject(project);
+            }
+        });
+
+        function openProject(project) {
+            modalBody.innerHTML = `
+                <aside class="modal-copy">
+                    <p class="eyebrow">Project</p>
+                    <h2 id="modalTitle">${project.title}</h2>
+                    <p>${project.summary}</p>
+                    <h3>Capabilities</h3>
+                    <ul>${project.capabilities.map((item) => `<li>${item}</li>`).join("")}</ul>
+                    <h3>Technologies</h3>
+                    <div class="tag-list">${project.technologies.map((item) => `<span>${item}</span>`).join("")}</div>
+                    ${project.document ? `
+                        <a class="btn btn-outline" href="${project.document}" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid ${project.documentIcon || "fa-file-pdf"}" aria-hidden="true"></i>
+                            ${project.documentLabel || "Documentation"}
+                        </a>
+                    ` : ""}
+                </aside>
+                <div class="modal-gallery">
+                    ${project.screenshots.map((image, index) => `<img src="${image}" alt="${project.title} screenshot ${index + 1}" loading="lazy" />`).join("")}
+                </div>
+            `;
+            modal.classList.add("active");
+            modal.setAttribute("aria-hidden", "false");
+            closeModalButton.focus();
         }
 
-        function closeModal(modal)
-        {
-            const modalElement = document.getElementById(modal);
-
-            modalElement.classList.remove('active');
+        function closeProjectModal() {
+            modal.classList.remove("active");
+            modal.setAttribute("aria-hidden", "true");
+            modalBody.innerHTML = "";
         }
 
-        function generateProjectContent(projectName)
-        {
-            let html = '';
-
-            if (projectName == 'printingShopServices')
-            {
-                html = `
-                        <div class="modal-left"> 
-                            <p style="font-size: 22px;"><strong>Digital Printing Business Website</strong></p>
-                            <p>
-                                <strong>Project Description</strong>
-                                <ul style="list-style: none;">
-                                    <li>This is a website I’ve been working on for my family’s business during my free time—something I’m really proud of.</li>
-                                </ul>
-                            </p>
-                            <p>
-                                <strong>Capabilities:</strong><br/>
-                                <ul>
-                                    <li>Clients are able to view what printing services we can offer</li>
-                                    <li>Clients are able to view other details about our printing services such as location, prices, fb pages</li>
-                                    <li>Clients are able to message/email us to get quotation thru this website</li>
-                                </ul>
-                            </p>
-                            <p>
-                                <strong>Technologies Used:</strong><br/><br/>
-                                <span class="badge bg-secondary">HTML</span>
-                                <span class="badge bg-secondary">CSS</span>
-                                <span class="badge bg-secondary">Bootstrap</span>
-                                <span class="badge bg-secondary">JavaScript</span> 
-                                <span class="badge bg-secondary">JQuery</span>
-                                <span class="badge bg-secondary">SQL</span>
-                                <span class="badge bg-secondary">.Net Framework/C#</span>
-                            </p>
-                            <p>
-                                <strong>Documentation:</strong><br/>
-                                <a href="documents/Digital_Printing_Business_Website_Documentation.pdf" target="_blank" rel="noopener noreferrer">Digital_Printing_Business_Website_Documentation.pdf</a>
-                            </p>
-                        </div>
-
-                        <div class="modal-right">
-                            <button class="modal-close closeModalBtn" onclick="closeModal('modal')">&times;</button>
-                            <div class="modal-right-content">
-                                <img src="images/printingShopServices/printingShopServices_1.jpg" alt="Image 1" /> <br/><br/>
-                                <img src="images/printingShopServices/printingShopServices_2.jpg" alt="Image 2" /> <br/><br/>
-                                <img src="images/printingShopServices/printingShopServices_3.jpg" alt="Image 3" /> <br/><br/>
-                                <img src="images/printingShopServices/printingShopServices_4.jpg" alt="Image 4" /> <br/><br/>
-                                <img src="images/printingShopServices/printingShopServices_5.jpg" alt="Image 5" /> <br/><br/>
-                                <img src="images/printingShopServices/printingShopServices_6.jpg" alt="Image 6" /> <br/><br/>
-                            </div>
-                        </div>`;
+        closeModalButton.addEventListener("click", closeProjectModal);
+        modal.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                closeProjectModal();
             }
-            else if (projectName == 'natsUtilities')
-            {
-                html = `<div class="modal-left"> 
-                            <p style="font-size: 22px;"><strong>NATS Queue Management Utilities</strong></p>
-                            <p>
-                                <strong>Project Description</strong>
-                                <ul style="list-style: none;">
-                                    <li>Effortlessly add NATS-based messaging to your .NET applications with this easy-to-integrate class library — perfect for scalable, event-driven architectures.</li>
-                                </ul>
-                            </p>
-                            <p>
-                                <strong>Capabilities:</strong><br/>
-                                <ul>
-                                    <li>Message Publishing – Seamlessly push messages to the NATS queue.</li>
-                                    <li>Message Subscription – Fetch and process messages from the NATS queue in real time.</li>
-                                    <li>JetStream Persistence (Coming Soon) – Future support for message durability and stream persistence via NATS JetStream.</li>
-                                </ul>
-                            </p>
-                            <p>
-                                <strong>Technologies Used:</strong><br/><br/>
-                                <span class="badge bg-secondary">.NET Core/C#</span>
-                                <span class="badge bg-secondary">NATS</span>
-                            </p>
-                            <p>
-                                <strong>Documentation:</strong><br/>
-                                <a href="documents/NATS_Queue_Management_Utilities_Documentation.pdf" target="_blank" rel="noopener noreferrer">NATS_Queue_Management_Utilities_Documentation.pdf</a>
-                            </p>
-                        </div>
-
-                        <div class="modal-right">
-                            <button class="modal-close closeModalBtn" onclick="closeModal('modal')">&times;</button>
-                            <div class="modal-right-content">
-                                <img src="images/natsUtilities/natsUtilities_1.png" alt="Image 1" /> <br/><br/>    
-                            </div>         
-                        </div>`;
+        });
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && modal.classList.contains("active")) {
+                closeProjectModal();
             }
-            else if (projectName == 'loginBlazor')
-            {
-                html = `<div class="modal-left"> 
-                            <p style="font-size: 22px;"><strong>User Authentication in Blazor Using ASP.NET Identity</strong></p>
-                            <p>
-                                <strong>Project Description</strong>
-                                <ul style="list-style: none;">
-                                    <li>Learn how to implement user authentication in Blazor using ASP.NET Identity. This guide will walk you through setting up login, ensuring that your Blazor app is both secure and easy to maintain.</li>
-                                </ul>
-                            </p>
-                            <p>
-                                <strong>Capabilities:</strong><br/>
-                                <ul>
-                                    <li>Login functionality</li>
-                                    <li>Logout functionality</li>
-                                    <li>Using Authorize attribute of ASP.NET Core to validate if the user is logged in already</li>
-                                    <li>Landing page setup of Login and Logout functionality</li>
-                                </ul>
-                            </p>
-                            <p>
-                                <strong>Technologies Used:</strong><br/><br/>
-                                <span class="badge bg-secondary">Blazor</span>
-                                <span class="badge bg-secondary">.NET Core/C#</span>
-                                <span class="badge bg-secondary">ASP.NET Identity</span>
-                                <span class="badge bg-secondary">Entity Framework Core</span> 
-                                <span class="badge bg-secondary">SQL Server</span>
-                            </p>
-                            <p>
-                                <strong>Documentation:</strong><br/>
-                                <a href="documents/Blazor_ASPNET_Identity_Authentication_Documentation.pdf" target="_blank" rel="noopener noreferrer">Blazor_ASPNET_Identity_Authentication_Documentation.pdf</a>
-                            </p>
-                        </div>
-
-                        <div class="modal-right">
-                            <button class="modal-close closeModalBtn" onclick="closeModal('modal')">&times;</button>
-                            <div class="modal-right-content">
-                                <img src="images/loginBlazor/loginBlazor_1.png" alt="Image 1" /> <br/><br/>
-                            </div>
-                        </div>`;
-            }
-            else if (projectName == 'photoboothIntegration')
-            {
-                html = `<div class="modal-left"> 
-                            <p style="font-size: 22px;"><strong>Photobooth Integration with DSLRBooth Software</strong></p>
-                            <p>
-                                <strong>Project Description</strong>
-                                <ul style="list-style: none;">
-                                    <li>A custom-built control application that manages DSLRBooth sessions by automatically starting and stopping sessions, configuring the number of print copies, and ending sessions once the preset copy limit is reached—streamlining photobooth operations for events with minimal manual intervention.</li>
-                                </ul>
-                            </p>
-                            <p>
-                                <strong>Capabilities:</strong><br/>
-                                <ul>
-                                    <li>Automatically starts DSLRBooth photo sessions</li>
-                                    <li>Automatically stops and closes sessions without manual input</li>
-                                    <li>Configures the number of print copies per session</li>
-                                    <li>Enforces copy limits and ends sessions once the limit is reached</li>
-                                    <li>Reduces operator interaction during live events</li>
-                                    <li>Improves workflow efficiency and session consistency</li>
-                                    <li>Designed for reliable use in event and photobooth environments</li>
-                                </ul>
-                            </p>
-                            <p>
-                                <strong>Technologies Used:</strong><br/><br/>
-                                <span class="badge bg-secondary">.NET Core / C#</span>
-                                <span class="badge bg-secondary">Visual Studio</span>
-                                <span class="badge bg-secondary">Log4net</span>
-                                <span class="badge bg-secondary">API</span>
-                                <span class="badge bg-secondary">RequestCatcher</span>
-                                <span class="badge bg-secondary">Postman</span>
-                            </p>
-                            <p>
-                                <strong>Documentation:</strong><br/>
-                                <a href="documents/dslrBooth_Remote_Integration_ENHANCED.pdf" target="_blank" rel="noopener noreferrer">dslrBooth_Remote_Integration_ENHANCED.pdf</a>
-                            </p>
-                        </div>
-
-                        <div class="modal-right">
-                            <button class="modal-close closeModalBtn" onclick="closeModal('modal')">&times;</button>
-                            <div class="modal-right-content">
-                                <img src="images/photoboothIntegration/photoboothIntegration_1.jpg" alt="Image 1" /> <br/><br/>
-                                <img src="images/photoboothIntegration/photoboothIntegration_2.jpg" alt="Image 2" /> <br/><br/>
-                                <img src="images/photoboothIntegration/photoboothIntegration_3.jpg" alt="Image 3" /> <br/><br/>
-                                <img src="images/photoboothIntegration/photoboothIntegration_4.jpg" alt="Image 4" /> <br/><br/>
-                                <img src="images/photoboothIntegration/photoboothIntegration_5.jpg" alt="Image 5" /> <br/><br/>
-                                <img src="images/photoboothIntegration/photoboothIntegration_6.jpg" alt="Image 6" /> <br/><br/>
-                                <img src="images/photoboothIntegration/photoboothIntegration_7.jpg" alt="Image 7" /> <br/><br/>
-                                <img src="images/photoboothIntegration/photoboothIntegration_8.jpg" alt="Image 8" /> <br/><br/>
-                                <img src="images/photoboothIntegration/photoboothIntegration_9.jpg" alt="Image 9" /> <br/><br/>
-                                <img src="images/photoboothIntegration/photoboothIntegration_10.jpg" alt="Image 10" /> <br/><br/>                         
-                            </div>
-                        </div>`;
-            }
-
-            return html;
-        }
+        });
 
     </script>
-    
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

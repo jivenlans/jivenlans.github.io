@@ -1,80 +1,21 @@
-html, body {
-    height: 100%;
-    /*background-image: url("../../images/background_main.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;*/
-}
-
 .body-content {
-    padding-left: 0;
-    padding-right: 0;
-    height: 100%;
-}
-
-h1, h2, h3, h4, font-face, a {
-    font-family: sans-serif !important;
+    min-height: 100%;
 }
 
 .normalFont {
-    color: #050032 !important;
-}
-
-.footerFont {
-    color: white;
-    font-size: 12px;;
-}
-
-.footer {
-    width: 100%;
-    padding-left: 6%;
-    padding-right: 6%;
-    position: relative;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    color: #101827;
 }
 
 .whiteFont {
-    color: white !important;
+    color: #ffffff;
 }
 
-.buttonDiv {
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-}
-
-
-.rightButtonDiv {
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: right;
-}
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-#pageContainer {
-    padding-top: 77px;
+.footerFont {
+    color: #dbe7f4;
+    font-size: 0.85rem;
 }
 
 .divBlueBackground {
-    background-color: #050032;
-    border-color: #050032;
-}
-
-.innerMainContainer {
-    width: 100%;
-    padding-left: 6%;
-    padding-right: 6%;
-}
-
-.profileContainer {
-    width: 100%;
-    padding-left: 6%;
-    padding-right: 6%;
-    padding-top: 4%;
-    padding-bottom: 4%;
+    background-color: #12213a;
+    border-color: #12213a;
 }

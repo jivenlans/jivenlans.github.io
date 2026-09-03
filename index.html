@@ -359,15 +359,19 @@
             {
                 id: "printingShopServices",
                 category: "production",
-                title: "Digital Printing Business Website",
+                title: "Eilselnel Printing Website",
                 image: "images/product_1.png",
-                summary: "A client-facing website for a family printing business, built to present services, pricing context, location details, and quote inquiries.",
+                status: "In verification",
+                summary: "A static website for Eilselnel Printing with service browsing, category filters, search, product details, and a quotation request flow. Live site: https://eilselnel.pages.dev/",
                 capabilities: [
-                    "Displays available printing services and business details.",
-                    "Presents location, prices, and social media touchpoints.",
-                    "Supports quotation inquiries through the website flow."
+                    "Displays printing services with images, descriptions, price guides, and turnaround notes.",
+                    "Filters services by category and supports text search across the catalog.",
+                    "Opens service detail modals with quotation prompts.",
+                    "Validates quote request fields and guides customers to contact the shop directly.",
+                    "Runs as a static Cloudflare Pages site without a server, database, or package install."
                 ],
-                technologies: ["HTML", "CSS", "Bootstrap", "JavaScript", "jQuery", "SQL", ".NET Framework", "C#"],
+                technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Cloudflare Pages"],
+                liveUrl: "https://eilselnel.pages.dev/",
                 document: "documents/Digital_Printing_Business_Website_Documentation.pdf",
                 screenshots: [
                     "images/printingShopServices/printingShopServices_1.jpg",
@@ -413,6 +417,7 @@
                 category: "production",
                 title: "DSLRBooth Photobooth Integration",
                 image: "images/product_4.png",
+                status: "Deployed to production",
                 summary: "A control application that automates DSLRBooth sessions, print copy counts, and event workflow limits.",
                 capabilities: [
                     "Starts and stops DSLRBooth sessions automatically.",
@@ -440,6 +445,7 @@
                 category: "production",
                 title: "Badminton Athlete Accreditation",
                 image: "images/badmintonAthleteAccreditation/Instructor-Dashboard.png",
+                status: "Presentation-ready",
                 summary: "A role-based accreditation operations system for badminton programs, covering participant registration, payment proof tracking, instructor workflows, attendance, grading, feedback, certification readiness, and reporting.",
                 capabilities: [
                     "Manages participant registration, payment proof submission, and approval workflows.",
@@ -509,15 +515,16 @@
                         ${categoryProjects.map((project) => `
                             <article class="project-card">
                                 <button type="button" class="project-trigger" data-project="${project.id}" aria-label="Open details for ${project.title}">
-                                    <span class="project-media">
-                                        <img src="${project.image}" alt="${project.title} preview" loading="lazy" />
-                                    </span>
-                                    <span class="project-content">
-                                        <span class="project-kicker">${project.technologies.slice(0, 3).join(" / ")}</span>
-                                        <strong>${project.title}</strong>
-                                        <span>${project.summary}</span>
-                                    </span>
-                                </button>
+                                        <span class="project-media">
+                                            <img src="${project.image}" alt="${project.title} preview" loading="lazy" />
+                                        </span>
+                                        <span class="project-content">
+                                            <span class="project-kicker">${project.technologies.slice(0, 3).join(" / ")}</span>
+                                            <strong>${project.title}</strong>
+                                            ${project.status ? `<span class="project-status"><strong>Status: ${project.status}</strong></span>` : ""}
+                                            <span>${project.summary}</span>
+                                        </span>
+                                    </button>
                             </article>
                         `).join("")}
                     </div>
@@ -542,17 +549,26 @@
                 <aside class="modal-copy">
                     <p class="eyebrow">Project</p>
                     <h2 id="modalTitle">${project.title}</h2>
+                    ${project.status ? `<p class="project-status"><strong>Status: ${project.status}</strong></p>` : ""}
                     <p>${project.summary}</p>
                     <h3>Capabilities</h3>
                     <ul>${project.capabilities.map((item) => `<li>${item}</li>`).join("")}</ul>
                     <h3>Technologies</h3>
                     <div class="tag-list">${project.technologies.map((item) => `<span>${item}</span>`).join("")}</div>
-                    ${project.document ? `
-                        <a class="btn btn-outline" href="${project.document}" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-solid ${project.documentIcon || "fa-file-pdf"}" aria-hidden="true"></i>
-                            ${project.documentLabel || "Documentation"}
-                        </a>
-                    ` : ""}
+                    <div class="modal-actions">
+                        ${project.liveUrl ? `
+                            <a class="btn btn-primary" href="${project.liveUrl}" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                Live Website
+                            </a>
+                        ` : ""}
+                        ${project.document ? `
+                            <a class="btn btn-outline" href="${project.document}" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid ${project.documentIcon || "fa-file-pdf"}" aria-hidden="true"></i>
+                                ${project.documentLabel || "Documentation"}
+                            </a>
+                        ` : ""}
+                    </div>
                 </aside>
                 <div class="modal-gallery">
                     ${project.screenshots.map((image, index) => `<img src="${image}" alt="${project.title} screenshot ${index + 1}" loading="lazy" />`).join("")}

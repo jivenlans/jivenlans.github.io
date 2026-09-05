@@ -35,10 +35,6 @@
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-.navbar-toggler-icon {
-    filter: invert(1);
-}
-
 .nav-item > a,
 .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.78);

@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio of Jivenlans Tabien, a software developer specializing in .NET, Blazor, APIs, integration, and background services." />
-    <title>Jivenlans Tabien | Software Developer</title>
+    <meta name="description" content="Portfolio of Jivenlans Tabien, a senior software developer focused on .NET applications, APIs, integrations, background services, and production support." />
+    <title>Jivenlans Tabien | Senior Software Developer</title>
     <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="css/site.css" />
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/container.css" />
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="96" tabindex="0">
-    <nav class="navbar navbar-expand-lg mainNavBar fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark mainNavBar fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#About" aria-label="Jivenlans Tabien home">
                 <span class="brand-mark">JT</span>
@@ -38,43 +38,65 @@
             <div class="container-fluid">
                 <div class="hero-grid">
                     <div class="hero-copy">
-                        <p class="eyebrow">Software Developer</p>
+                        <p class="eyebrow">Senior Software Developer</p>
                         <h1>Jivenlans Tabien</h1>
                         <p class="lead">
-                            I build production-ready web applications, APIs, integrations, and background services with a practical focus on reliability, maintainability, and clean delivery.
+                            I build and maintain enterprise web applications, APIs, integrations, and background services with a practical focus on reliability and clean delivery.
                         </p>
                         <p>
-                            My work spans healthcare, finance, retail, manufacturing, and enterprise operations, including systems for hospitals, banks, eyecare and eyeglasses companies, and one of the largest alcohol producers in the Philippines.
+                            My experience spans healthcare, finance, identity, manufacturing, retail, and eyecare operations, including production systems, legacy modernization, third-party integrations, code reviews, and mentoring.
                         </p>
+                        <ul class="profile-highlights" aria-label="Profile highlights">
+                            <li>
+                                <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
+                                <span>Modernizes and supports production .NET systems.</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-plug-circle-bolt" aria-hidden="true"></i>
+                                <span>Builds REST, SOAP, GraphQL, messaging, and third-party integrations.</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+                                <span>Delivers with Azure, Docker, GitHub Actions, Cloudflare, and monitoring tools.</span>
+                            </li>
+                        </ul>
                         <div class="hero-actions">
                             <a class="btn btn-primary" href="#Projects">
                                 <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
-                                View Projects
+                                View Work
                             </a>
                             <a class="btn btn-outline" href="documents/Resume - Jivenlans Tabien.pdf" target="_blank" rel="noopener noreferrer">
                                 <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
-                                Resume
+                                Download Resume
                             </a>
                         </div>
                     </div>
 
                     <div class="hero-panel" aria-label="Profile summary">
-                        <img src="images/profile_picture.jpg" alt="Jivenlans Tabien profile picture" class="profile-image" />
+                        <div class="profile-image-frame">
+                            <img src="images/profile_picture.jpg" alt="Jivenlans Tabien profile picture" class="profile-image" />
+                        </div>
                         <div class="quick-stats">
                             <div>
                                 <strong>10+</strong>
-                                <span>years experience</span>
+                                <span>years in software delivery</span>
                             </div>
                             <div>
                                 <strong>.NET</strong>
-                                <span>Core, MVC, Blazor</span>
+                                <span>APIs, MVC, Blazor</span>
                             </div>
                             <div>
-                                <strong>APIs</strong>
-                                <span>SOAP, REST, integrations</span>
+                                <strong>Production</strong>
+                                <span>support, reviews, releases</span>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="section-heading skills-heading">
+                    <p class="eyebrow">Technical Profile</p>
+                    <h2>Core skills for enterprise application delivery</h2>
+                    <!-- <p>Focused on backend systems, frontend delivery, integrations, cloud deployments, and operational support.</p> -->
                 </div>
 
                 <div class="skills-showcase" aria-label="Technical capabilities">
@@ -83,11 +105,13 @@
                         <div class="skill-list">
                             <span>C#</span>
                             <span>.NET Core</span>
-                            <span>.NET 9</span>
+                            <span>.NET 8 & 9</span>
                             <span>ASP.NET MVC</span>
                             <span>ASP.NET Core Web API</span>
+                            <span>ASP.NET Webforms</span>
                             <span>Blazor</span>
                             <span>Entity Framework Core</span>
+                            <span>xUnit</span>
                         </div>
                     </section>
                     <section class="skill-category" aria-labelledby="frontendSkillsTitle">
@@ -101,27 +125,73 @@
                             <span>Bootstrap</span>
                         </div>
                     </section>
-                    <section class="skill-category" aria-labelledby="messagingSkillsTitle">
-                        <h3 id="messagingSkillsTitle">APIs, Messaging & Background Work</h3>
+                    <section class="skill-category" aria-labelledby="apiSkillsTitle">
+                        <h3 id="apiSkillsTitle">API & Testing Tools</h3>
                         <div class="skill-list">
-                            <span>REST APIs</span>
+                            <span>REST API</span>
                             <span>GraphQL</span>
                             <span>SOAP</span>
+                            <span>Swagger</span>
+                            <span>Postman</span>
+                            <span>SOAPUI</span>
+                            <span>Mockoon</span>
+                        </div>
+                    </section>
+                    <section class="skill-category" aria-labelledby="softwareDesignSkillsTitle">
+                        <h3 id="softwareDesignSkillsTitle">Software Design</h3>
+                        <div class="skill-list">
+                            <span>Object-Oriented Programming (OOP)</span>
+                            <span>SOLID Principles</span>
+                            <span>DRY</span>
+                            <span>Design Patterns</span>
+                            <span>Dependency Injection</span>
+                            <span>Inversion of Control (OIC)</span>
+                        </div>
+                    </section>
+                    <section class="skill-category" aria-labelledby="softwareArchitectureSkillsTitle">
+                        <h3 id="softwareArchitectureSkillsTitle">Software Architecture</h3>
+                        <div class="skill-list">
+                            <span>N-Tier Architecture</span>
+                            <span>Clean Architecture</span>
+                            <span>CQRS</span>
+                            <span>Microservices</span>
+                        </div>
+                    </section>
+                    <section class="skill-category" aria-labelledby="authSkillsTitle">
+                        <h3 id="authSkillsTitle">Security & Authentication</h3>
+                        <div class="skill-list">
+                            <span>JWT</span>
+                            <span>PGP Keys</span>
+                            <span>ASP.NET Identity</span>
+                            <span>SQL Encryption</span>
+                            <span>Bouncy Castle</span>
+                        </div>
+                    </section>
+                    <section class="skill-category" aria-labelledby="messagingSkillsTitle">
+                        <h3 id="messagingSkillsTitle">Messaging</h3>
+                        <div class="skill-list">
                             <span>NATS</span>
                             <span>Kafka</span>
                             <span>Azure Queues</span>
-                            <span>Hangfire</span>
-                            <span>SignalR</span>
+                        </div>
+                    </section>
+                    <section class="skill-category" aria-labelledby="backgroundSkillsTitle">
+                        <h3 id="backgroundSkillsTitle">Background Work</h3>
+                        <div class="skill-list">
+                            <span>Hangfire Jobs</span>
+                            <span>Console Applications</span>
+                            <span>Windows Services</span>
+                            <span>SQL Jobs</span>
                         </div>
                     </section>
                     <section class="skill-category" aria-labelledby="dataSkillsTitle">
-                        <h3 id="dataSkillsTitle">Data & Storage</h3>
+                        <h3 id="dataSkillsTitle">Data, Storage & Data Access</h3>
                         <div class="skill-list">
-                            <span>SQL Server</span>
+                            <span>SQL</span>
                             <span>PostgreSQL</span>
                             <span>MongoDB</span>
                             <span>MySQL</span>
-                            <span>Supabase</span>
+                            <span>SQLite</span>
                             <span>Google Cloud Datastore</span>
                             <span>Azure Blob Storage</span>
                         </div>
@@ -131,16 +201,30 @@
                         <div class="skill-list">
                             <span>Azure Web App Service</span>
                             <span>Azure Functions</span>
-                            <span>Google Cloud Run Functions</span>
+                            <span>Cloud Run Functions (Google Cloud)</span>
+                            <span>Railway (.NET apps)</span>
+                            <span>Cloudflare (static web apps)</span>
+                            <span>GitHub Pages (static web apps)</span>
+                            <span>Supabase (PostgreSQL)</span>
                         </div>
                     </section>
-                    <section class="skill-category" aria-labelledby="devopsSkillsTitle">
-                        <h3 id="devopsSkillsTitle">Deployment & Version Control</h3>
+                    <section class="skill-category" aria-labelledby="versionControlSkillsTitle">
+                        <h3 id="versionControlSkillsTitle">Version Control</h3>
                         <div class="skill-list">
-                            <span>Railway</span>
-                            <span>Cloudflare</span>
-                            <span>Docker</span>
                             <span>Git</span>
+                            <span>GitHub Repositories</span>
+                            <span>Azure DevOps Repositories</span>
+                            <span>TFS Repositories</span>
+                        </div>
+                    </section>
+                    <section class="skill-category" aria-labelledby="deploymentSkillsTitle">
+                        <h3 id="deploymentSkillsTitle">Deployment</h3>
+                        <div class="skill-list">
+                            <span>Docker</span>
+                            <span>GitHub Actions</span>
+                            <span>Azure DevOps Pipelines</span>
+                            <span>Jenkins</span>
+                            <span>Fortify</span>
                         </div>
                     </section>
                     <section class="skill-category" aria-labelledby="collaborationSkillsTitle">
@@ -154,17 +238,38 @@
                         <h3 id="monitoringSkillsTitle">Monitoring & Logging</h3>
                         <div class="skill-list">
                             <span>Azure Application Insights</span>
-                            <span>Serilog</span>
-                            <span>Datadog</span>
                             <span>Google Cloud Logs Explorer</span>
+                            <span>Datadog</span>
+                            <span>Serilog</span>
+                            <span>Log4Net</span>
                         </div>
                     </section>
                     <section class="skill-category" aria-labelledby="integrationSkillsTitle">
                         <h3 id="integrationSkillsTitle">External Communications</h3>
                         <div class="skill-list">
                             <span>CDyne</span>
-                            <span>Mailgun</span>
                             <span>Twilio</span>
+                            <span>Mailgun</span>
+                        </div>
+                    </section>
+                    <section class="skill-category" aria-labelledby="fileTransferSkillsTitle">
+                        <h3 id="fileTransferSkillsTitle">File Transfer</h3>
+                        <div class="skill-list">
+                            <span>FTP/SFTP</span>
+                        </div>
+                    </section>
+                    <section class="skill-category" aria-labelledby="reportingSkillsTitle">
+                        <h3 id="reportingSkillsTitle">Reporting</h3>
+                        <div class="skill-list">
+                            <span>SSRS</span>
+                            <span>ClosedXML</span>
+                        </div>
+                    </section>
+                    <section class="skill-category" aria-labelledby="sdlcSkillsTitle">
+                        <h3 id="sdlcSkillsTitle">Software Methodologies</h3>
+                        <div class="skill-list">
+                            <span>Waterfall</span>
+                            <span>Agile/Scrum</span>
                         </div>
                     </section>
                     <section class="skill-category" aria-labelledby="aiSkillsTitle">
@@ -173,7 +278,7 @@
                             <span>Codex</span>
                             <span>GitHub Copilot</span>
                             <span>ChatGPT</span>
-                            <span>Microsoft Copilot</span>
+                            <span>Copilot</span>
                             <span>Agentic AI</span>
                         </div>
                     </section>
@@ -184,9 +289,9 @@
         <section id="Projects" class="section-band section-dark">
             <div class="container-fluid">
                 <div class="section-heading">
-                    <p class="eyebrow">Selected Work</p>
-                    <h2>Applications, libraries, and practical builds</h2>
-                    <p>Production-ready applications are separated from focused practice projects, training builds, and reusable libraries.</p>
+                    <p class="eyebrow">Personal Works</p>
+                    <h2>Production systems and practical builds</h2>
+                    <!-- <p>A focused sample of applications, integrations, libraries, and workflow tools.</p> -->
                 </div>
 
                 <div class="project-showcase" id="projectGrid"></div>
@@ -198,7 +303,7 @@
                 <div class="section-heading">
                     <p class="eyebrow">Career</p>
                     <h2>Professional experience</h2>
-                    <p>Progressive roles across enterprise systems, application development, integrations, support, code review, and mentoring.</p>
+                    <!-- <p>Enterprise software roles covering .NET applications, APIs, integrations, modernization, production support, reviews, and mentoring.</p> -->
                 </div>
 
                 <div class="timeline">
@@ -208,9 +313,9 @@
                             <h3>EssilorLuxottica <span>via Talentium Inc.</span></h3>
                             <p class="role">Senior Analyst Programmer / Contractor</p>
                             <ul>
-                                <li>Maintains web applications, SOAP and REST APIs, console applications, middleware DLLs, and legacy systems.</li>
+                                <li>Maintains enterprise web applications, SOAP and REST APIs, console apps, middleware DLLs, and legacy systems.</li>
                                 <li>Integrates internal systems with third-party applications and supports production workflows.</li>
-                                <li>Performs code reviews and presents implemented solutions to product owners.</li>
+                                <li>Reviews code and presents implemented solutions to product owners.</li>
                             </ul>
                         </div>
                     </article>
@@ -221,9 +326,9 @@
                             <h3>IDEMIA Philippines Inc.</h3>
                             <p class="role">Senior Software Developer</p>
                             <ul>
-                                <li>Developed web apps, SOAP and REST APIs, Windows services, console applications, and Blazor Server apps with SSO integration.</li>
-                                <li>Spearheaded migration of legacy systems to .NET Core and designed applications from the ground up.</li>
-                                <li>Supported products, reviewed code, mentored developers, and delivered Agile team outcomes.</li>
+                                <li>Built web apps, SOAP and REST APIs, Windows services, console apps, and Blazor Server apps with SSO.</li>
+                                <li>Led legacy modernization to .NET Core and delivered applications from concept to production.</li>
+                                <li>Supported production products, reviewed code, mentored developers, and worked in Agile teams.</li>
                             </ul>
                         </div>
                     </article>
@@ -234,9 +339,9 @@
                             <h3>SMITS Inc. <span>IT company of San Miguel Corporation</span></h3>
                             <p class="role">.NET Developer</p>
                             <ul>
-                                <li>Built web applications, SOAP and REST APIs, Windows services, and console applications.</li>
+                                <li>Built .NET web applications, SOAP and REST APIs, Windows services, and console apps.</li>
                                 <li>Implemented SAP integrations and maintained legacy systems.</li>
-                                <li>Delivered demos, production support, code reviews, and mentoring.</li>
+                                <li>Handled demos, production support, code reviews, and mentoring.</li>
                             </ul>
                         </div>
                     </article>
@@ -247,7 +352,7 @@
                             <h3>Service 101 Plus Consulting Inc.</h3>
                             <p class="role">Enterprise Systems Specialist</p>
                             <ul>
-                                <li>Developed web applications, REST APIs, and mobile application features.</li>
+                                <li>Built web applications, REST APIs, and mobile app features.</li>
                                 <li>Handled SAP integration, product support, and client demos.</li>
                             </ul>
                         </div>
@@ -280,7 +385,7 @@
                         <h3>Adamson University</h3>
                         <p class="role">Bachelor of Science in Information Technology</p>
                         <p class="date-line">June 2012 - March 2016</p>
-                        <p>Focused on software development principles, database design, and web technologies, with practical experience building applications and collaborating on team projects.</p>
+                        <p>Software development, database design, web technologies, and collaborative application projects.</p>
                     </div>
                 </article>
             </div>
@@ -291,9 +396,9 @@
                 <div class="contact-grid">
                     <div>
                         <p class="eyebrow">Contact</p>
-                        <h2>Let us talk about systems, integrations, and practical delivery.</h2>
+                        <h2>Let's talk about .NET systems, APIs, and integrations.</h2>
                         <!-- <p>
-                            I am available for software development roles and project work focused on .NET applications, APIs, integrations, and production support.
+                            Available for software development roles and project work focused on enterprise applications, integrations, and production support.
                         </p> -->
                         <div class="contact-details" aria-label="Contact details">
                             <div class="contact-detail">
@@ -328,7 +433,7 @@
                         <div class="hero-actions">
                             <a class="btn btn-primary" href="documents/Resume - Jivenlans Tabien.pdf" target="_blank" rel="noopener noreferrer">
                                 <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
-                                Resume
+                                Download Resume
                             </a>
                         </div>
                     </div>
@@ -363,7 +468,7 @@
                 title: "Eilselnel Printing Website",
                 image: "images/product_1.png",
                 status: "In verification",
-                summary: "A static website for Eilselnel Printing with service browsing, category filters, search, product details, and a quotation request flow. Live site: https://eilselnel.pages.dev/",
+                summary: "Static business site with a searchable service catalog and quotation request flow for a printing shop.",
                 capabilities: [
                     "Displays printing services with images, descriptions, price guides, and turnaround notes.",
                     "Filters services by category and supports text search across the catalog.",
@@ -388,7 +493,7 @@
                 category: "practice",
                 title: "NATS Queue Management Utilities",
                 image: "images/product_2.png",
-                summary: "A .NET class library that simplifies NATS-based messaging for scalable, event-driven application workflows.",
+                summary: ".NET utility library for publishing and consuming NATS messages in event-driven workflows.",
                 capabilities: [
                     "Publishes messages to NATS subjects.",
                     "Subscribes to and processes queue messages in real time.",
@@ -403,7 +508,7 @@
                 category: "practice",
                 title: "Blazor Authentication with ASP.NET Identity",
                 image: "images/product_3.png",
-                summary: "A practical Blazor authentication implementation using ASP.NET Identity, authorization attributes, and Entity Framework Core.",
+                summary: "Blazor authentication sample using ASP.NET Identity, Entity Framework Core, and protected routes.",
                 capabilities: [
                     "Implements login and logout flows.",
                     "Uses ASP.NET Core authorization to protect authenticated areas.",
@@ -419,14 +524,14 @@
                 title: "DSLRBooth Photobooth Integration",
                 image: "images/product_4.png",
                 status: "Deployed to production",
-                summary: "A control application that automates DSLRBooth sessions, print copy counts, and event workflow limits.",
+                summary: "Production tool that automates DSLRBooth sessions, print copy counts, and event workflow limits.",
                 capabilities: [
                     "Starts and stops DSLRBooth sessions automatically.",
                     "Configures print copy counts per session.",
                     "Ends sessions when the preset copy limit is reached.",
                     "Reduces operator interaction during live events."
                 ],
-                technologies: [".NET Core", "C#", "Visual Studio", "Log4net", "API", "RequestCatcher", "Postman"],
+                technologies: [".NET Core", "C#", "DSLRBooth API", "log4net"],
                 document: "documents/dslrBooth_Remote_Integration_ENHANCED.pdf",
                 screenshots: [
                     "images/photoboothIntegration/photoboothIntegration_1.jpg",
@@ -447,7 +552,7 @@
                 title: "Badminton Athlete Accreditation",
                 image: "images/badmintonAthleteAccreditation/Instructor-Dashboard.png",
                 status: "Presentation-ready",
-                summary: "A role-based accreditation operations system for badminton programs, covering participant registration, payment proof tracking, instructor workflows, attendance, grading, feedback, certification readiness, and reporting.",
+                summary: "Role-based accreditation system for participant onboarding, attendance, grading, feedback, certification, and reporting.",
                 capabilities: [
                     "Manages participant registration, payment proof submission, and approval workflows.",
                     "Provides separate instructor and participant portals with role-based access.",
@@ -455,21 +560,18 @@
                     "Includes reporting flows and email-ready operational tracking."
                 ],
                 technologies: [
-                    "React",
-                    "TypeScript",
-                    "Vite",
-                    "Bootstrap",
                     ".NET 9",
                     "ASP.NET Core Web API",
+                    "React",
+                    "TypeScript",
+                    "Bootstrap",
                     "Entity Framework Core",
                     "PostgreSQL",
                     "JWT Authentication",
-                    "FluentValidation",
                     "Serilog",
                     "xUnit",
                     "Docker",
                     "Azure Web App Service",
-                    "Railway (older version)",
                     "Cloudflare",
                     "Mailgun",
                     "Supabase"
@@ -488,13 +590,11 @@
         const projectCategories = [
             {
                 id: "production",
-                title: "Production-Ready Applications",
-                description: "Complete, workflow-oriented applications built for real users, business context, or live operational use."
+                title: "Production-Ready Applications"
             },
             {
                 id: "practice",
-                title: "Practice Projects & Reusable Libraries",
-                description: "Focused training builds, technical demos, and self-contained libraries for learning, reuse, or experimentation."
+                title: "Practice Projects & Reusable Libraries"
             }
         ];
 
